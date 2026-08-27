@@ -1,0 +1,27 @@
+# Direct dependencies for dclde_localization_explainer.ipynb
+# Python 3.12 (system python3 is 3.9 and is too old)
+#
+#   uv venv --python 3.12 .venv
+#   uv pip install --python .venv -r requirements.txt
+#
+# For a byte-identical rebuild of the verified environment, use
+# requirements.lock.txt instead (full transitive pin).
+
+# --- notebook imports ---
+numpy==2.5.2
+pandas==3.0.5
+scipy==1.18.0
+matplotlib==3.11.1
+
+# --- to run the notebook ---
+jupyter==1.1.1
+ipykernel==7.3.0
+
+# --- for tests ---
+pytest==9.1.1
+
+# --- reading the DCLDE .nc (NetCDF) files; not needed by the notebook,
+#     which simulates the DAS waterfall rather than loading NetCDF.
+#     Uncomment if you pull the detections/ data from GCS.
+# xarray==2026.1.0
+# netcdf4==1.7.2

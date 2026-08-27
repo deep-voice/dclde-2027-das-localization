@@ -1,0 +1,25 @@
+# Python virtual environment
+.venv/
+
+# Downloaded/generated data (large, reproducible from GCS).
+# dclde_2027_listing.json is deliberately NOT ignored: it's the bucket manifest
+# that download_dclde_2027.py needs, not data.
+dclde_2027_das-finwhale-localization/
+dclde_localization/dclde_localization/data/
+
+# Original zip and macOS extraction cruft
+dclde_localization (1).zip
+dclde_localization/__MACOSX/
+**/.DS_Store
+**/.ipynb_checkpoints/
+
+# Logs
+logs/
+
+# Python build/test artifacts
+__pycache__/
+*.egg-info/
+.pytest_cache/
+
+# Claude Code local state
+.claude/
