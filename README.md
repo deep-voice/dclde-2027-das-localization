@@ -90,3 +90,13 @@ organizers publish the held-out test set, two proxies stand in:
 `scripts/run_baseline.py` reports `mean(|residual|) * c` as an "error" in meters.
 Treat this as a **goodness-of-fit proxy, not a position error** — a confidently
 wrong solution can have a small residual.
+
+## License
+
+The code in `src/`, `scripts/`, and `tests/` is MIT licensed — see
+[LICENSE](LICENSE).
+
+`dclde_localization/` holds the DCLDE 2027 explainer notebook and its figures,
+authored by the challenge organizers and redistributed unmodified here so the
+provenance of the refactored code is visible. Those files are not covered by the
+MIT license and remain the property of their respective authors.
