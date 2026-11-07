@@ -48,7 +48,7 @@ downloaded too: 21 windows, 56 calls. The script was rerun unchanged on every pa
 Outputs: `paper/results/t017_all_{calls,loo}.csv`, `t017_all_lwo_*`, and the printed summaries
 `t017_all*_summary.txt`.
 
-- **Calls.** 119 two-cable calls: batch 1 6, batch 2 29, batch 3 27, batch 4 54, batch 5 2. Of
+- **Calls.** 119 two-cable calls: batch 1 7, batch 2 29, batch 3 27, batch 4 54, batch 5 2. Of
   these, 117 are kept; 2 are dropped (1 gross misfit, 1 unsolved or ambiguous). Batches 1 and 5 have
   only one window pair downloaded each, which is why 47 of the 166 two-cable calls are not covered.
 - **Clusters.** 12 clusters: 27, 27, 24, 14, 12, 3, 2, 2, 2, 2, 1, 1. The new large clusters:
