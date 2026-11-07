@@ -66,9 +66,9 @@ Per cluster (leave one call out), South smooth σ:
 |---|---|---|
 | 27-call | 116.6 → 49.0 ms | 89.8 → 55.0 ms |
 | 24-call | 77.6 → 27.1 ms | 119.3 → 84.7 ms |
-| each of the 2- and 3-call clusters | 205 → 46 ms at worst | |
+| 2- and 3-call clusters in batches 1 and 4 (4 clusters) | from 107–205 ms to 23–46 ms | 108–160 ms to 46–91 ms |
 
-The exception is one 2-call batch-5 cluster: South 132.1 → 83.7 ms, but North gets worse,
+The exception is the 2-call batch-5 cluster: South 132.1 → 83.7 ms, but North gets worse,
 54.0 → 73.6 ms.
 
 ## What this shows
