@@ -191,7 +191,55 @@ residual" question.
      residual curves, so a position-dependent correction can be estimated and cross-validated.
    - Caveat: cluster 1 (calls 1, 3, 15, near x = 37 km) has very large smooth curves (rms
      335–434 ms over 32–36 km). Check that cluster for a wrong basin or far-range breakdown before
-     generalising.
+     generalising. **Checked:** their dense-pick solutions have two basins 6.9–7.9 km apart, beyond
+     Plan B's 500 m flip threshold. So their positions are unreliable, and they are excluded below.
+
+   **2c. Confirmed on 10 windows (2026-11-07).** Windows: South 2021-11-04 02:00:02, 08:09:12,
+   12:00:02, 16:09:22 and 2021-11-03 22:17:22; North 2021-11-04 02:00:02, 02:05:02, 08:09:12,
+   12:00:02, 16:11:52. That covers all 5 batches and both cables, and includes two North/South
+   pairs from the same minutes. Each window gets a one-cable solve. Calls are excluded when their
+   dense-pick solution is basin-ambiguous (two basins > 500 m apart) or unsolved: 31 of 94.
+   Script `paper/scripts/t005_step2c_pool.py`, output `paper/results/t005_step2c_pooled_*.csv`
+   (per-window outputs `t005_step2[b]_<cable>_<window>_*.csv`).
+
+   | Pooled, unambiguous calls | median |
+   |---|---|
+   | residual σ, annotation picks → dense picks at the same stations (n = 56) | 70.5 → 53.9 ms; lower in 42 of 56 |
+   | residual σ, all kept dense stations | 85.3 ms |
+   | station-to-station noise (lower bound) | 13.0 ms |
+   | rough part (below ~1 km) | 30.9 ms |
+   | smooth part (km scale), xcorr / peak / centroid / onset (n = 63) | 61.2 / 72.6 / 68.6 / 75.7 ms |
+   | shape agreement of xcorr and onset smooth curves | r = 0.91 |
+   | xcorr − onset drift (envelope shape) | 31.5 ms |
+
+   Smooth-curve correlation between call pairs, by source separation:
+
+   | Separation | pairs | windows | r, median (IQR) |
+   |---|---|---|---|
+   | < 1 km | 38 | 8 | 0.77 (0.59 to 0.86) |
+   | 1–3 km | 6 | 3 | 0.07 (−0.33 to 0.46) |
+   | ≥ 3 km | 90 | 9 | 0.04 (−0.16 to 0.44) |
+
+   Per window, the smooth part ranges from 32 to 107 ms and the neighbour noise from 11.5 to
+   14.6 ms. Every window shows the same picture.
+
+   **Conclusion.** On 63 calls across 10 windows, both cables and all 5 batches, the one-window
+   result holds:
+   - Pick precision is ~13 ms between neighbouring stations.
+   - The residual is dominated by a ~61 ms km-scale travel-time error that is present whatever
+     point of the envelope is picked.
+   - That error repeats for calls from the same position (r ≈ 0.77) and not for calls ≥ 1 km
+     apart (r ≈ 0.05).
+
+   This is a source-position-dependent model error of the straight-ray ConstantC(1480) null.
+   T-005's question is answered:
+   - Dense picking does reach ~13 ms pick precision.
+   - It cannot make depth visible until this model term is reduced.
+   - The registered 30 ms bar is not met (53.9 ms same stations, 85.3 ms all stations), and the
+     reason is model error, not picking.
+
+   Not yet done: two-cable solves on the paired windows, and the full 271-call stratum (step 4).
+   One-cable solves are basin-ambiguous for a third of calls, which is why 31 were excluded.
 
 3. **Validate the picker (~2h).** (a) At the annotated channels, compare dense picks with the
    annotation picks; the spread of that difference bounds annotation error. (b) Inject a synthetic

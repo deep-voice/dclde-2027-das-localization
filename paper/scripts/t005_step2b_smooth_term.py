@@ -47,7 +47,10 @@ def rsig(x):
 
 def solve_resid(cable, d, t):
     px, py, pz = cable.chan_to_xyz(d)
-    b = solve(px, py, pz, t, ConstantC(C), sz=ZS).best
+    sol = solve(px, py, pz, t, ConstantC(C), sz=ZS)
+    if not sol.basins:
+        return np.full(len(t), np.nan), (np.nan, np.nan)
+    b = sol.best
     return t - (travel_time(b.x, b.y, ZS, px, py, pz, C) + b.t0), (b.x, b.y)
 
 
@@ -124,12 +127,12 @@ def main(nc_path, picks_csv, out_prefix, cfg=PickerConfig()):
             row[f"smooth_{label}_ms"] = rsig(s) * 1e3
             row[f"x_{label}"], row[f"y_{label}"] = xy
         ok = np.isfinite(sm["time"]) & np.isfinite(sm["onset"])
-        row["corr_smooth_xcorr_onset"] = float(np.corrcoef(sm["time"][ok], sm["onset"][ok])[0, 1])
-        row["corr_smooth_xcorr_peak"] = float(np.corrcoef(sm["time"][ok], sm["peak"][ok])[0, 1])
+        row["corr_smooth_xcorr_onset"] = float(np.corrcoef(sm["time"][ok], sm["onset"][ok])[0, 1]) if ok.sum() > 2 else np.nan
+        row["corr_smooth_xcorr_peak"] = float(np.corrcoef(sm["time"][ok], sm["peak"][ok])[0, 1]) if ok.sum() > 2 else np.nan
         # does the pick's lag behind the onset track envelope width?
         lag = (k.time - k.onset).to_numpy()
         row["sd_xcorr_minus_onset_ms"] = rsig(lag) * 1e3
-        row["corr_lag_fwhm"] = float(np.corrcoef(smooth(lag)[ok], smooth(k.fwhm.to_numpy())[ok])[0, 1])
+        row["corr_lag_fwhm"] = float(np.corrcoef(smooth(lag)[ok], smooth(k.fwhm.to_numpy())[ok])[0, 1]) if ok.sum() > 2 else np.nan
         row["smooth_lag_ms"] = rsig(smooth(lag)[ok]) * 1e3
         row["median_fwhm_ms"] = float(np.median(k.fwhm)) * 1e3
         per_call.append(row)
@@ -171,7 +174,7 @@ def main(nc_path, picks_csv, out_prefix, cfg=PickerConfig()):
                           "overlap_km": (hi - lo) / 1e3, "corr": float(np.corrcoef(ia, ib)[0, 1]),
                           "rms_diff_ms": float(np.sqrt(np.mean((ia - ib) ** 2))) * 1e3,
                           "rms_each_ms": float(np.sqrt((np.mean(ia**2) + np.mean(ib**2)) / 2)) * 1e3})
-    pr = pd.DataFrame(pairs).sort_values("sep_km")
+    pr = pd.DataFrame(pairs, columns=["a", "b", "sep_km", "overlap_km", "corr", "rms_diff_ms", "rms_each_ms"]).sort_values("sep_km")
     pr.to_csv(f"{out_prefix}_pairs.csv", index=False)
     near, far = pr[pr.sep_km < 1.0], pr[pr.sep_km >= 1.0]
     print(f"\npairs < 1 km apart: n={len(near)}, smooth-curve corr median {near["corr"].median():.2f} "

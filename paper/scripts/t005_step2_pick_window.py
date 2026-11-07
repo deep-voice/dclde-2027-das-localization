@@ -39,6 +39,8 @@ def rsig(x):
 def residuals(cable, d, t):
     px, py, pz = cable.chan_to_xyz(d)
     sol = solve(px, py, pz, t, ConstantC(C), sz=ZS)
+    if not sol.basins:  # no usable basin: report NaN rather than drop the call
+        return np.full(len(t), np.nan), (np.nan, np.nan)
     b = sol.best
     r = t - (travel_time(b.x, b.y, ZS, px, py, pz, C) + b.t0)
     return r, (b.x, b.y)
