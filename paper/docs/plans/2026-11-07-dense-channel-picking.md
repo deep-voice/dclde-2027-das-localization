@@ -96,6 +96,56 @@ residual" question.
    interpolation and an SNR gate. Decimate to channels at least one coherence length apart, so the
    picks are independent and χ² is not inflated. Output: dense picks per call, same schema as
    `load_picks`.
+
+   **Built (2026-11-07):** `src/dclde_localization/physics/dense_picks.py` uses envelope
+   cross-correlation, per the step-1 finding, not per-channel peaks. Stations sit every 51 m inside
+   the annotated span only; each station is the mean of its channels. Each station is aligned to an
+   iterated template with sub-sample parabolic refinement. The median lag is removed each
+   iteration, so the picks keep the annotations' timing convention. A station is kept if
+   CC ≥ 0.6 and its lag is within 0.15 s of the running median. No propagation model is used.
+   Tests: `tests/physics/test_dense_picks.py`, 5 tests, including a synthetic chevron where 35 ms of
+   seed jitter is recovered to < 5 ms. That covers step 3b on synthetic noise, not on real noise.
+   The full suite passes (94).
+
+   **First run, one window (2026-11-07; n = 10 calls, South only, one-cable solves; not a result).**
+   Script `paper/scripts/t005_step2_pick_window.py`, output
+   `paper/results/t005_step2_south_2021-11-04_02-00-02_{calls,picks}.csv`. Medians over the 10 calls:
+
+   | Pick set (same ConstantC(1480), z = −30 m null) | residual σ |
+   |---|---|
+   | annotation picks | 85.2 ms |
+   | dense picks at the same stations (count and geometry fixed) | 58.8 ms |
+   | all kept dense stations (median 323 per call, 87% kept, median CC 0.9) | 92.0 ms |
+
+   The dense residual along the cable, split three ways:
+
+   | Part | σ |
+   |---|---|
+   | station-to-station noise, from neighbours 51 m apart | 12.2 ms |
+   | rough part (minus a ~1 km running median) | 25.3 ms |
+   | smooth part at km scale | 67.8 ms |
+
+   The smooth part's 5–95% excursion along the cable has a median of 316 ms.
+
+   - The picker is precise. The neighbour estimate (~12 ms, a lower bound because adjacent stations
+     share part of the gauge) is at the ~12 ms level the task asked about. At the annotation
+     stations, swapping in dense picks lowers residual σ in 8 of 10 calls.
+   - **But the residual is dominated by km-scale smooth structure (~68 ms), not pick noise.** The
+     sparse annotation picks (1.1 km apart) sample that structure as if it were scatter. That is
+     why step 0 saw no SNR dependence and why using every dense station raises σ (92 ms) instead of
+     lowering it.
+   - Two candidate causes, not yet separated: (i) model error that varies smoothly along the
+     cable (propagation, bathymetry, or cable position at km scale), or (ii) a picker bias that
+     drifts smoothly as the envelope shape changes along the cable (e.g. multipath). Step 0 already
+     ruled out a fixed per-channel static (split-half test), so (i) would have to depend on the
+     source position.
+   - If (i), then on this window better picks cannot bring χ² near the 13 ms depth signal: the
+     ~68 ms model term needs modelling first. That reframes T-005 toward the open "76–82 ms
+     residual" question.
+   - The bar registered above (median σ ≤ 30 ms) is **not met** on this window: 58.8 ms same
+     stations, 92.0 ms all stations. One window, one cable, 10 calls; not offered as the step-4
+     result.
+
 3. **Validate the picker (~2h).** (a) At the annotated channels, compare dense picks with the
    annotation picks; the spread of that difference bounds annotation error. (b) Inject a synthetic
    chevron of known moveout into a noise-only stretch and measure recovery error.
