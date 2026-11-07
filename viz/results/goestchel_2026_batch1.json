@@ -1,0 +1,2650 @@
+{
+ "name": "goestchel-2026-batch1",
+ "kind": "estimate",
+ "frame": "local_xy",
+ "produced_by": "Goestchel, Wilcock & Abadi 2026, released code",
+ "c_assumed": 1480.0,
+ "notes": "Imported from batch1_localizations_with_coords.csv. Published lat/lon and x_utm/y_utm are discarded: they place calls ~270 km west of the cable. z is fixed at -30 m for all rows.",
+ "solutions": [
+  {
+   "call": "row0",
+   "x": 37000.55141575245,
+   "y": 22344.41459218071,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1259131999979349,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 8.796304888899291
+   }
+  },
+  {
+   "call": "row1",
+   "x": 37011.21654974513,
+   "y": 22382.389927898403,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1271672721518634,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 10.809599309244112
+   }
+  },
+  {
+   "call": "row2",
+   "x": 56646.60373186344,
+   "y": 28869.28568605743,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1425493456102549,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 24.026293091036205
+   }
+  },
+  {
+   "call": "row3",
+   "x": 56632.63054813178,
+   "y": 28757.09520005052,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1493195835862341,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 22.48053704832788
+   }
+  },
+  {
+   "call": "row4",
+   "x": 82709.94027547924,
+   "y": 12467.70533610117,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1604775242595858,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 27.02115400472836
+   }
+  },
+  {
+   "call": "row5",
+   "x": 83301.97204845557,
+   "y": 16011.616402651567,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 1.0375698541249825,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 119.41910194154244
+   }
+  },
+  {
+   "call": "row6",
+   "x": 86079.29320699032,
+   "y": 13004.823702943662,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1699804120215232,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 57.33170981480673
+   }
+  },
+  {
+   "call": "row7",
+   "x": 82700.42312068278,
+   "y": 12652.953107673342,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1438938637935487,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 30.45691968107726
+   }
+  },
+  {
+   "call": "row8",
+   "x": 85993.13964174007,
+   "y": 13530.041350467389,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.4333539378883906,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 189.2387441518137
+   }
+  },
+  {
+   "call": "row9",
+   "x": 36965.50739162014,
+   "y": 22411.776260328268,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.11773638587156,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 8.125513913753277
+   }
+  },
+  {
+   "call": "row10",
+   "x": 56566.691383128906,
+   "y": 28967.156441391628,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.159443668928584,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.413911270586745
+   }
+  },
+  {
+   "call": "row11",
+   "x": 86039.66297889475,
+   "y": 12880.219861128411,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1873282350234235,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 54.35232490802448
+   }
+  },
+  {
+   "call": "row12",
+   "x": 82757.3190439925,
+   "y": 12710.031569456944,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1610383679223863,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 24.03470513419494
+   }
+  },
+  {
+   "call": "row13",
+   "x": 56792.88750671548,
+   "y": 28723.99593509681,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1299195056812669,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 19.816144688622813
+   }
+  },
+  {
+   "call": "row14",
+   "x": 83306.94094425207,
+   "y": 15868.489503378942,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 1.0260683253649852,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 108.57116952872713
+   }
+  },
+  {
+   "call": "row15",
+   "x": 86023.03003227813,
+   "y": 12749.048714766626,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1879911653222596,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 67.16707594381113
+   }
+  },
+  {
+   "call": "row16",
+   "x": 75206.90193258936,
+   "y": 19404.16962598632,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.178407727297261,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 37.53680391838063
+   }
+  },
+  {
+   "call": "row17",
+   "x": 56618.092574445385,
+   "y": 29038.304174528654,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1645551093363605,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 19.860688859758717
+   }
+  },
+  {
+   "call": "row18",
+   "x": 37013.05001044731,
+   "y": 22365.40278178172,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.130942853336262,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 11.79490553463176
+   }
+  },
+  {
+   "call": "row19",
+   "x": 74379.18797649509,
+   "y": 26244.4334317619,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2950167974566159,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 29.44945359416417
+   }
+  },
+  {
+   "call": "row20",
+   "x": 85884.5278757714,
+   "y": 13001.188508593972,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1764529772169283,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 50.43939639998761
+   }
+  },
+  {
+   "call": "row21",
+   "x": 82685.42752623899,
+   "y": 12551.31775667776,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2072770057955899,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 43.79794118313604
+   }
+  },
+  {
+   "call": "row22",
+   "x": 64873.094421367125,
+   "y": 20956.23546114474,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2784985681869339,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 106.45683119194864
+   }
+  },
+  {
+   "call": "row23",
+   "x": 82932.14494883096,
+   "y": 13443.020632252132,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1230233166023556,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 128.24604336471444
+   }
+  },
+  {
+   "call": "row24",
+   "x": 86077.73363100525,
+   "y": 11987.971863197825,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2238965437219693,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 47.54231372473495
+   }
+  },
+  {
+   "call": "row25",
+   "x": 82782.60189265154,
+   "y": 12583.107891015296,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.160006834207336,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 23.237881892793112
+   }
+  },
+  {
+   "call": "row26",
+   "x": 89234.22854456448,
+   "y": 13285.492976414022,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2323264025587496,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 68.40184506852222
+   }
+  },
+  {
+   "call": "row27",
+   "x": 67879.96869899666,
+   "y": 29174.115964007124,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3833130180536422,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 63.96546132297196
+   }
+  },
+  {
+   "call": "row28",
+   "x": 75821.12458411367,
+   "y": 26288.06064107061,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2779570558907954,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 23.086849176413036
+   }
+  },
+  {
+   "call": "row29",
+   "x": 85943.09513772395,
+   "y": 12795.80069905741,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1850020904616985,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 56.53355299107677
+   }
+  },
+  {
+   "call": "row30",
+   "x": 75581.17071650103,
+   "y": 27622.728458312613,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1943623464415232,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 1162.335849273679
+   }
+  },
+  {
+   "call": "row31",
+   "x": 74481.28756360468,
+   "y": 22833.44242197024,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3411261918303237,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 915.1201983192284
+   }
+  },
+  {
+   "call": "row32",
+   "x": 71945.36481785981,
+   "y": 20427.10640211184,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2779726692710869,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 75.27356559556476
+   }
+  },
+  {
+   "call": "row33",
+   "x": 53568.48218459594,
+   "y": 19264.300703890905,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2841184063506137,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 169.21664100543092
+   }
+  },
+  {
+   "call": "row34",
+   "x": 60796.35821807104,
+   "y": 18395.83652272809,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2705948871011546,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 70.936805380895
+   }
+  },
+  {
+   "call": "row35",
+   "x": 58965.21027554996,
+   "y": 17859.36758775648,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.225340012655138,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 92.35896979066378
+   }
+  },
+  {
+   "call": "row36",
+   "x": 59380.02980967893,
+   "y": 16374.96797449798,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2213621503882426,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 386.0898068958019
+   }
+  },
+  {
+   "call": "row37",
+   "x": 82673.33782332401,
+   "y": 13330.317599206872,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1261594835202753,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 141.00305209300075
+   }
+  },
+  {
+   "call": "row38",
+   "x": 93410.5910853214,
+   "y": 20802.53720524461,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3052790176428702,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 169.76389246604563
+   }
+  },
+  {
+   "call": "row39",
+   "x": 85237.06950394197,
+   "y": 12473.3406508661,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2628273741813511,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 192.3485526929524
+   }
+  },
+  {
+   "call": "row40",
+   "x": 89206.37468518825,
+   "y": 17118.409879904357,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1781737922834368,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 106.44419987630262
+   }
+  },
+  {
+   "call": "row41",
+   "x": 53332.009526079055,
+   "y": 18731.51605516608,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1619638205112749,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 92.49694016161456
+   }
+  },
+  {
+   "call": "row42",
+   "x": 89058.77562072477,
+   "y": 10391.012305696366,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1350193974241187,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 151.63650239541712
+   }
+  },
+  {
+   "call": "row43",
+   "x": 82940.1303428408,
+   "y": 12481.739063997156,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1740716638308341,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 25.276152391407184
+   }
+  },
+  {
+   "call": "row44",
+   "x": 73419.94864436614,
+   "y": 25924.732863725727,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3493626661314149,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 24.533391150045727
+   }
+  },
+  {
+   "call": "row45",
+   "x": 85405.00789479126,
+   "y": 12728.587807637845,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1951673605272235,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 58.65155784902147
+   }
+  },
+  {
+   "call": "row46",
+   "x": 77606.68391260863,
+   "y": 16660.909915324126,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2732526691254194,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 34.54452259127598
+   }
+  },
+  {
+   "call": "row47",
+   "x": 77153.5573974674,
+   "y": 18067.669272371502,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1688988846850543,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 549.0587182482413
+   }
+  },
+  {
+   "call": "row48",
+   "x": 75110.20030212904,
+   "y": 19666.57356799621,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2507603727034714,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 583.2120361244753
+   }
+  },
+  {
+   "call": "row49",
+   "x": 65457.42360522821,
+   "y": 30288.470689712813,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2062377840120355,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 323.0604616511208
+   }
+  },
+  {
+   "call": "row50",
+   "x": 76886.17161942633,
+   "y": 27767.835517164127,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1761770105043034,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 1275.2352773334574
+   }
+  },
+  {
+   "call": "row51",
+   "x": 75547.80061889385,
+   "y": 29738.499217464072,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3321400579793631,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 1530.3845501660824
+   }
+  },
+  {
+   "call": "row52",
+   "x": 72621.16063529566,
+   "y": 29240.1850684859,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.156464036646743,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 835.7727715331824
+   }
+  },
+  {
+   "call": "row53",
+   "x": 71871.45200468392,
+   "y": 26138.754029581403,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1936283702358023,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 230.98122454067973
+   }
+  },
+  {
+   "call": "row54",
+   "x": 71620.181897121,
+   "y": 26559.86378905377,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3416723574001725,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 262.72946506386256
+   }
+  },
+  {
+   "call": "row55",
+   "x": 54028.87132477556,
+   "y": 25612.468570428915,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2954575945489175,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 125.4078209441315
+   }
+  },
+  {
+   "call": "row56",
+   "x": 82821.34503831559,
+   "y": 12542.449595827247,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.14830343821858,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 26.756173976639083
+   }
+  },
+  {
+   "call": "row57",
+   "x": 78505.79812568177,
+   "y": 22136.02964889025,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.216318164330028,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 94.76457237680734
+   }
+  },
+  {
+   "call": "row58",
+   "x": 85837.47645884419,
+   "y": 12840.399633307496,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1705461071641419,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 855.8793591256496
+   }
+  },
+  {
+   "call": "row59",
+   "x": 71972.76063891049,
+   "y": 24635.097722893795,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.313266045439647,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 274.39357952785014
+   }
+  },
+  {
+   "call": "row60",
+   "x": 83276.71840149333,
+   "y": 16887.090498621263,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2392367612742226,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 920.141638088838
+   }
+  },
+  {
+   "call": "row61",
+   "x": 96577.90509524732,
+   "y": 22644.121750947525,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2991906847650517,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 569.6591298692247
+   }
+  },
+  {
+   "call": "row62",
+   "x": 92953.55938563072,
+   "y": 22937.505611502987,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2334708904184145,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 119.192224754985
+   }
+  },
+  {
+   "call": "row63",
+   "x": 74913.32390614646,
+   "y": 20855.790551427268,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3411225255426756,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 296.2536159059633
+   }
+  },
+  {
+   "call": "row64",
+   "x": 91342.66819068212,
+   "y": 21846.59728057383,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3002493810680119,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 1302.113007645559
+   }
+  },
+  {
+   "call": "row65",
+   "x": 85199.98656808499,
+   "y": 19488.646499066424,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2631755609027144,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 89.17234395999891
+   }
+  },
+  {
+   "call": "row66",
+   "x": 73366.61132607395,
+   "y": 18439.138497010143,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2417228740345534,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 95.01281729223798
+   }
+  },
+  {
+   "call": "row67",
+   "x": 74379.11215659959,
+   "y": 19940.14466820517,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1572432655268776,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 86.0862161568961
+   }
+  },
+  {
+   "call": "row68",
+   "x": 88071.7233787396,
+   "y": 21039.223970474646,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2129745254958643,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 102.2980020014187
+   }
+  },
+  {
+   "call": "row69",
+   "x": 37196.022438685,
+   "y": 22291.46451461481,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1301994509291698,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 8.522804408021962
+   }
+  },
+  {
+   "call": "row70",
+   "x": 88051.93006554508,
+   "y": 10064.744346554176,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2097900695008791,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 73.01908933704725
+   }
+  },
+  {
+   "call": "row71",
+   "x": 77927.19364341583,
+   "y": 14536.45859995977,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2894914066747393,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 38.3143654726226
+   }
+  },
+  {
+   "call": "row72",
+   "x": 37155.89982770103,
+   "y": 22388.679279891006,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1158373879903311,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.833516984278015
+   }
+  },
+  {
+   "call": "row73",
+   "x": 37237.31422331146,
+   "y": 22342.740492005607,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.0974277623080629,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 9.391520030247298
+   }
+  },
+  {
+   "call": "row74",
+   "x": 76693.34497251576,
+   "y": 27947.45913834956,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1638447362092787,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 887.6546504107796
+   }
+  },
+  {
+   "call": "row75",
+   "x": 71400.70268777457,
+   "y": 27246.08032520709,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2316720104237389,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 127.9217880902105
+   }
+  },
+  {
+   "call": "row76",
+   "x": 40187.3269460512,
+   "y": 23410.68204266517,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3722249514271843,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 204.7888564973831
+   }
+  },
+  {
+   "call": "row77",
+   "x": 30184.196571299788,
+   "y": 30108.31287984857,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2690019640340058,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 182.6108784808097
+   }
+  },
+  {
+   "call": "row78",
+   "x": 71890.01155741063,
+   "y": 28168.140007835307,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2333115353972395,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 326.78882600086246
+   }
+  },
+  {
+   "call": "row79",
+   "x": 56884.8729032835,
+   "y": 28966.634768957814,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1061928183177011,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 26.40159662016415
+   }
+  },
+  {
+   "call": "row80",
+   "x": 76813.99276396558,
+   "y": 28041.40985159945,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.138649766632627,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 650.4788016277026
+   }
+  },
+  {
+   "call": "row81",
+   "x": 74597.69982438443,
+   "y": 6592.97215385549,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2229488503906466,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 462.11063153213126
+   }
+  },
+  {
+   "call": "row82",
+   "x": 74128.03276821948,
+   "y": 20894.49669036524,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.195683563632242,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 88.05808037691885
+   }
+  },
+  {
+   "call": "row83",
+   "x": 88928.92578725427,
+   "y": 14671.507369772276,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.0916616588704209,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 25.405395636684435
+   }
+  },
+  {
+   "call": "row84",
+   "x": 61233.90729237528,
+   "y": 20016.093951099552,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2638086709820773,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 101.84340773647617
+   }
+  },
+  {
+   "call": "row85",
+   "x": 60837.62163572506,
+   "y": 18295.51000643842,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2808406325367126,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 92.60005101101618
+   }
+  },
+  {
+   "call": "row86",
+   "x": 80643.74436846739,
+   "y": -2395.869250315156,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3336262694186244,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 299.34382402229954
+   }
+  },
+  {
+   "call": "row87",
+   "x": 37197.06689094831,
+   "y": 22274.12311941151,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1279155559059326,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 8.594952556995251
+   }
+  },
+  {
+   "call": "row88",
+   "x": 56793.79375301032,
+   "y": 29459.008800951706,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1351367949335181,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.55464556466368
+   }
+  },
+  {
+   "call": "row89",
+   "x": 83020.03680118745,
+   "y": 13036.693957441232,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2037068520164129,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 41.58211497632898
+   }
+  },
+  {
+   "call": "row90",
+   "x": 73941.6440657787,
+   "y": 26007.82935543348,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.316984361470944,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 28.64378542978484
+   }
+  },
+  {
+   "call": "row91",
+   "x": 89169.46941625056,
+   "y": 13684.931227479325,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2882775160965943,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 83.83398892765416
+   }
+  },
+  {
+   "call": "row92",
+   "x": 79507.6590867563,
+   "y": 24728.11300981167,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2351652934099222,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 64.19454517044977
+   }
+  },
+  {
+   "call": "row93",
+   "x": 37177.66262218708,
+   "y": 22364.09298542607,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1129715367075855,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.954259416107129
+   }
+  },
+  {
+   "call": "row94",
+   "x": 37188.93461432191,
+   "y": 22286.509564826865,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1110215842594552,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 8.271207539200223
+   }
+  },
+  {
+   "call": "row95",
+   "x": 56803.45781734005,
+   "y": 29398.00786579322,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1496934663946562,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.4540553365972
+   }
+  },
+  {
+   "call": "row96",
+   "x": 83023.05215150998,
+   "y": 12701.190388476592,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2473521763943757,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 61.52450158876588
+   }
+  },
+  {
+   "call": "row97",
+   "x": 56878.94899285857,
+   "y": 28977.48241002385,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1094728171364644,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 26.861554743302456
+   }
+  },
+  {
+   "call": "row98",
+   "x": 75873.60540531174,
+   "y": 28098.864421706912,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1182830285829036,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 364.910204881361
+   }
+  },
+  {
+   "call": "row99",
+   "x": 37190.7503264652,
+   "y": 22309.30391605718,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1252348020854398,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 8.210158028638416
+   }
+  },
+  {
+   "call": "row100",
+   "x": 56839.026678352566,
+   "y": 29563.667832140505,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1506871825695561,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.57275699998295
+   }
+  },
+  {
+   "call": "row101",
+   "x": 37249.20260911441,
+   "y": 22261.670928502048,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.0843800318496057,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 11.528851473641652
+   }
+  },
+  {
+   "call": "row102",
+   "x": 79888.29344384711,
+   "y": 27061.69197718988,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2158267756155967,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 29.464642332744035
+   }
+  },
+  {
+   "call": "row103",
+   "x": 80175.55468127748,
+   "y": 14530.34178986278,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2028057990484188,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 28.008111124373528
+   }
+  },
+  {
+   "call": "row104",
+   "x": 37180.6562107328,
+   "y": 22321.237290616435,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1181033883411217,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.946227722388109
+   }
+  },
+  {
+   "call": "row105",
+   "x": 37178.461061646776,
+   "y": 22334.05205093109,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1133858909995956,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.8335637484874
+   }
+  },
+  {
+   "call": "row106",
+   "x": 56830.3253727103,
+   "y": 29615.71398181932,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1483233077715784,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 19.668270851066065
+   }
+  },
+  {
+   "call": "row107",
+   "x": 57647.59454377988,
+   "y": 27124.24594957944,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.0807838578239989,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 21.48867180087337
+   }
+  },
+  {
+   "call": "row108",
+   "x": 70176.7798005246,
+   "y": 22610.751830403897,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2746408292967987,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 200.47703094530863
+   }
+  },
+  {
+   "call": "row109",
+   "x": 71373.14204612059,
+   "y": 19402.850415862675,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2237428805507587,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 355.56485992737584
+   }
+  },
+  {
+   "call": "row110",
+   "x": 67352.46490853108,
+   "y": 23550.630007849017,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1262026035504294,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 369.7343759885724
+   }
+  },
+  {
+   "call": "row111",
+   "x": 66899.429713562,
+   "y": 24726.842882810244,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1662224226514272,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 94.88704069241298
+   }
+  },
+  {
+   "call": "row112",
+   "x": 76803.82615643878,
+   "y": 28299.75220177068,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1328078082620813,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 544.5388081637449
+   }
+  },
+  {
+   "call": "row113",
+   "x": 75507.75619673247,
+   "y": 28145.61848025657,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.0784704506884672,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 296.2707918931416
+   }
+  },
+  {
+   "call": "row114",
+   "x": 53233.95133010867,
+   "y": 13929.317161360595,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2644680249006383,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 141.69028270069757
+   }
+  },
+  {
+   "call": "row115",
+   "x": 55112.386090032654,
+   "y": 17192.931922779957,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2289898765890346,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 88.73157055857628
+   }
+  },
+  {
+   "call": "row116",
+   "x": 88894.79995247097,
+   "y": 14497.530260844684,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1142470899960646,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 37.644167160650845
+   }
+  },
+  {
+   "call": "row117",
+   "x": 63022.34211740918,
+   "y": 17610.728791030117,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1747255233808747,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 32.764780956086256
+   }
+  },
+  {
+   "call": "row118",
+   "x": 37226.7500801474,
+   "y": 22236.88133089281,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1296599893031225,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 8.350352692532486
+   }
+  },
+  {
+   "call": "row119",
+   "x": 37254.39595327422,
+   "y": 22187.336058466437,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1141074861018683,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 8.476570599832602
+   }
+  },
+  {
+   "call": "row120",
+   "x": 56922.364496634094,
+   "y": 29495.710301813357,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1346487976098796,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.62853703945056
+   }
+  },
+  {
+   "call": "row121",
+   "x": 83643.7501579761,
+   "y": 27844.009535057445,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1792433642918526,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 38.74949218431254
+   }
+  },
+  {
+   "call": "row122",
+   "x": 83188.10131901663,
+   "y": 13832.870735159306,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2063293005386635,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 55.649609075920445
+   }
+  },
+  {
+   "call": "row123",
+   "x": 37200.58038682463,
+   "y": 22262.775123021594,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1161220291546103,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.4857083708086
+   }
+  },
+  {
+   "call": "row124",
+   "x": 56873.75000343989,
+   "y": 29690.9287599616,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1634946323205142,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.127444257209863
+   }
+  },
+  {
+   "call": "row125",
+   "x": 80174.62056467649,
+   "y": 27210.606112268648,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1841362297058694,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 25.747533462971248
+   }
+  },
+  {
+   "call": "row126",
+   "x": 81793.38587090855,
+   "y": 27785.887747141896,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1648148861455405,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 27.53176720066943
+   }
+  },
+  {
+   "call": "row127",
+   "x": 57031.00139628964,
+   "y": 29294.50364809968,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1044222108457986,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 24.539568042886422
+   }
+  },
+  {
+   "call": "row128",
+   "x": 37232.419645044,
+   "y": 22188.279157801477,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1261452405929228,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.865213642553942
+   }
+  },
+  {
+   "call": "row129",
+   "x": 37250.967332175154,
+   "y": 22154.203056347167,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.124343021050256,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.810582134209438
+   }
+  },
+  {
+   "call": "row130",
+   "x": 57008.86678871138,
+   "y": 29681.252107350967,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1394292310567728,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.35803456528802
+   }
+  },
+  {
+   "call": "row131",
+   "x": 56969.8329232441,
+   "y": 29609.651887452896,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1360990900351029,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.37347360662091
+   }
+  },
+  {
+   "call": "row132",
+   "x": 37222.60646780394,
+   "y": 22218.805723929552,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1143294445473751,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.259721459074783
+   }
+  },
+  {
+   "call": "row133",
+   "x": 56922.27253132826,
+   "y": 29769.365941120643,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1586079113905031,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.52665754406752
+   }
+  },
+  {
+   "call": "row134",
+   "x": 102737.6833070688,
+   "y": 32445.202077784143,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1628187811746881,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 122.84014887925794
+   }
+  },
+  {
+   "call": "row135",
+   "x": 81101.00502217923,
+   "y": -2568.65069575,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2390785616706281,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 102.4176295987906
+   }
+  },
+  {
+   "call": "row136",
+   "x": 100503.43265522938,
+   "y": 12902.61491971835,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1850093183196579,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 262.738558534472
+   }
+  },
+  {
+   "call": "row137",
+   "x": 37275.16671942796,
+   "y": 22125.397576684085,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1233063981086902,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.298283697265642
+   }
+  },
+  {
+   "call": "row138",
+   "x": 57020.1227230344,
+   "y": 29676.039294934155,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1416304365665857,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 20.65085168455607
+   }
+  },
+  {
+   "call": "row139",
+   "x": 57174.33827731101,
+   "y": 29492.43096619178,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1468824259141633,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 28.08011877975807
+   }
+  },
+  {
+   "call": "row140",
+   "x": 83163.25766004602,
+   "y": 14630.530284297289,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2863880776997047,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 57.06571978215531
+   }
+  },
+  {
+   "call": "row141",
+   "x": 85160.76074030058,
+   "y": 28465.51773205484,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.199576178667815,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 42.084230656179095
+   }
+  },
+  {
+   "call": "row142",
+   "x": 37238.233461654505,
+   "y": 22234.47140689429,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1097547302946217,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 6.903625283412201
+   }
+  },
+  {
+   "call": "row143",
+   "x": 37310.69205563456,
+   "y": 22173.241823054934,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.0916278587130432,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.473194424444626
+   }
+  },
+  {
+   "call": "row144",
+   "x": 56987.7404317081,
+   "y": 29763.5182190958,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1594746806289515,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 21.92440802597646
+   }
+  },
+  {
+   "call": "row145",
+   "x": 73967.01656996802,
+   "y": 25770.23246584053,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.0859453591961895,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 862.5175895877941
+   }
+  },
+  {
+   "call": "row146",
+   "x": 72233.19405924577,
+   "y": 26704.565525522827,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2172222817178576,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 3365.185342279875
+   }
+  },
+  {
+   "call": "row147",
+   "x": 75897.39749415405,
+   "y": 28365.89864780297,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.143744363716514,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 928.476740417522
+   }
+  },
+  {
+   "call": "row148",
+   "x": 71880.72067376837,
+   "y": 23952.053154164525,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.208786802900608,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 309.36966195244105
+   }
+  },
+  {
+   "call": "row149",
+   "x": 71685.60007921395,
+   "y": 26346.27206401735,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3232447091413874,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 251.65310319607696
+   }
+  },
+  {
+   "call": "row150",
+   "x": 71832.44773857648,
+   "y": 28206.466465462046,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1824976991879285,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 362.6017032509319
+   }
+  },
+  {
+   "call": "row151",
+   "x": 73046.02249220593,
+   "y": 24864.56043628637,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2871663957895448,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 630.356238816603
+   }
+  },
+  {
+   "call": "row152",
+   "x": 70007.01359862967,
+   "y": 16930.83033484908,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2950747547035161,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 57.7709988792824
+   }
+  },
+  {
+   "call": "row153",
+   "x": 37277.83118841339,
+   "y": 22095.978970546323,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1286817228108882,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.615327820280039
+   }
+  },
+  {
+   "call": "row154",
+   "x": 82831.62814427161,
+   "y": 13698.70370663648,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1542541510886795,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 36.04422615356438
+   }
+  },
+  {
+   "call": "row155",
+   "x": 78025.35884982791,
+   "y": 26228.9691177843,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2488127865155111,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 40.80841575994887
+   }
+  },
+  {
+   "call": "row156",
+   "x": 85241.65034877173,
+   "y": 28448.08136831313,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.171927177600856,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 42.798237331692846
+   }
+  },
+  {
+   "call": "row157",
+   "x": 37259.3561370964,
+   "y": 22173.90156231586,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.118106391998569,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.208459034557812
+   }
+  },
+  {
+   "call": "row158",
+   "x": 37266.50225647263,
+   "y": 22135.123808017903,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1095186002043521,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.34234030489779
+   }
+  },
+  {
+   "call": "row159",
+   "x": 83142.28714965853,
+   "y": 14036.651417343935,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2719531199687784,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 113.42240373422828
+   }
+  },
+  {
+   "call": "row160",
+   "x": 82807.92380180028,
+   "y": 13810.3987930043,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3103165242749917,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 213.86477022816192
+   }
+  },
+  {
+   "call": "row161",
+   "x": 76622.61965781242,
+   "y": 27797.424439808558,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1462520839618166,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 686.6845121588616
+   }
+  },
+  {
+   "call": "row162",
+   "x": 57120.40032177437,
+   "y": 29455.08232604815,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.0982366053558445,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 23.20820309312989
+   }
+  },
+  {
+   "call": "row163",
+   "x": 37289.5326822704,
+   "y": 22064.947470711348,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1252015895118914,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 7.500462112329016
+   }
+  },
+  {
+   "call": "row164",
+   "x": 82841.67017960576,
+   "y": 13722.092693455828,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1933305523406137,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 39.21420809871782
+   }
+  },
+  {
+   "call": "row165",
+   "x": 82785.98138908533,
+   "y": 13684.88118889012,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1418241108402255,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 28.057991944753265
+   }
+  },
+  {
+   "call": "row166",
+   "x": 78156.98199848758,
+   "y": 26679.352041015954,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2272648160678566,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 283.9506743986863
+   }
+  },
+  {
+   "call": "row167",
+   "x": 97638.25978750788,
+   "y": 13057.785815471248,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.3087534694984428,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 161.5519089182046
+   }
+  },
+  {
+   "call": "row168",
+   "x": 37260.20645214653,
+   "y": 22146.61137073609,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1134253092109779,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 6.985280772437905
+   }
+  },
+  {
+   "call": "row169",
+   "x": 83053.88514202814,
+   "y": 14447.333209421677,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1983876399283766,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 58.09948946903797
+   }
+  },
+  {
+   "call": "row170",
+   "x": 78172.20051289733,
+   "y": 1877.2277818639589,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2782061646595395,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 75.07945225174267
+   }
+  },
+  {
+   "call": "row171",
+   "x": 74272.53069026272,
+   "y": 20670.34852353992,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2456398986047767,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 21.21904952690693
+   }
+  },
+  {
+   "call": "row172",
+   "x": 65627.7956929041,
+   "y": 28963.631934547404,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.2173015239190988,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 31.8263224741888
+   }
+  },
+  {
+   "call": "row173",
+   "x": 57149.60648259359,
+   "y": 29702.754233431737,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1022359926001319,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 31.42244119582112
+   }
+  },
+  {
+   "call": "row174",
+   "x": 76692.12654653685,
+   "y": 27688.108109412296,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1682586346079297,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 961.8526899379526
+   }
+  },
+  {
+   "call": "row175",
+   "x": 76809.06949776383,
+   "y": 28119.32122908944,
+   "z": -30.0,
+   "z_fixed": true,
+   "t0": null,
+   "wrms": 0.1364469602531569,
+   "n_picks": null,
+   "cables_used": [],
+   "unc": {
+    "type": "circle",
+    "radius": 677.2613447575076
+   }
+  }
+ ]
+}
