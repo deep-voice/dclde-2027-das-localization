@@ -1,0 +1,6 @@
+# experiment: propagation_denominators
+# generated: 2026-09-21T01:07:52Z
+# rows: 1
+# Every call in the source annotation snapshot is accounted for by exactly one of calls_eligible, calls_below_min_picks, calls_unsolved, calls_flipped, calls_path_failed or calls_geometry_error, and those six sum to calls_total; picks_eligible is the pick-level count within calls_eligible only. No rate elsewhere in this experiment (e.g. a censored fraction or a max-range statistic) may be quoted without naming which of these denominators it is over.
+calls_total,calls_below_min_picks,calls_unsolved,calls_flipped,calls_path_failed,calls_geometry_error,calls_eligible,picks_eligible
+628,104,26,86,31,0,381,8660

@@ -1,0 +1,8 @@
+# Visualizer. Install from the repo root:
+#   uv pip install -r requirements.txt -r viz/requirements.txt
+# JS tests need Node >= 18: `cd viz && npm test`.
+pyproj
+xarray
+netcdf4
+h5netcdf
+requests

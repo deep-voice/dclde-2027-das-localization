@@ -1,0 +1,12 @@
+# Paper / sound-speed research. Install from the repo root:
+#   uv pip install -r requirements.txt -r paper/requirements.txt
+# Core (src/dclde_localization/physics) extras
+pyproj
+xarray
+netcdf4
+h5netcdf
+requests
+# Paper only
+gsw
+seaborn
+pyyaml

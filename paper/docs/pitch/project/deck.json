@@ -1,0 +1,67 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-09-22T18:34:45Z"
+ },
+ "title": "Can a Fibre Hear Depth?",
+ "order": [
+  "cover",
+  "setup",
+  "practice",
+  "idea",
+  "aperture",
+  "div-a",
+  "scorecard",
+  "join",
+  "freec",
+  "noisefloor",
+  "trend",
+  "modes",
+  "path",
+  "div-b",
+  "gate",
+  "sigma",
+  "profiles",
+  "fields",
+  "mechanism",
+  "exchange",
+  "signal",
+  "statement",
+  "div-next",
+  "paper",
+  "gaps",
+  "sweep",
+  "ask"
+ ],
+ "sections": {
+  "s-idea": {
+   "description": "The idea: bring real ocean sound speed into DAS localization, and why it might unlock depth",
+   "start": "cover"
+  },
+  "s-a": {
+   "description": "Plan A: sound speed and propagation path — what we measured",
+   "start": "div-a"
+  },
+  "s-b": {
+   "description": "Plan B: the pre-registered depth gate, and why it fails",
+   "start": "div-b"
+  },
+  "s-next": {
+   "description": "From findings to a paper: claims, gaps, headline experiment, the ask",
+   "start": "div-next"
+  }
+ },
+ "faces": {
+  "source-serif-4": {
+   "family": "Source Serif 4",
+   "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400..700&display=swap"
+  },
+  "ibm-plex-sans": {
+   "family": "IBM Plex Sans",
+   "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
+  }
+ },
+ "cover": "cover",
+ "designSystems": []
+}

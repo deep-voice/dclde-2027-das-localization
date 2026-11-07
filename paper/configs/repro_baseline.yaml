@@ -1,0 +1,32 @@
+name: repro_baseline
+notes: >
+  Reproduce Goestchel et al. batch 1. Our estimator against their published
+  localizations, joined per call through the utc timestamp. No pass/fail
+  threshold is set in advance: a fabricated threshold is only a way of not
+  looking. Report the distribution and investigate the tail individually.
+
+  `truth_model`/`inversion_model` are deliberately NOT present here (Task 14
+  whole-branch review, Critical 2). An earlier version of this file declared
+  `inversion_model: {kind: path_average, profile: oregon_nov}`, but
+  `experiments.repro.run_repro` (see its `model = ConstantC()` line) always
+  inverts with ConstantC(1480) -- matching the published baseline's own
+  fixed-c assumption, so the estimator is isolated as the only variable under
+  test, not confounded with a different propagation model at the same time.
+  That is a deliberate choice, not an oversight, but the config used to name
+  a different model than the one the code ran. `run_repro_baseline` (in
+  paper/scripts/run_experiment.py) calls `experiments.repro.run_repro`
+  directly and does not read a truth_model/inversion_model key.
+
+  `margin_s: 1.0` selects the margin-based join (see experiments/repro.py's
+  module docstring): at the interface's own default (tol_s=90.0, provably
+  unique join), 0/176 baseline rows join at all, because ~4 real calls occur
+  every 90 s window and timing alone cannot single one out. Margin mode
+  trades "provably unique" for "confidently isolated in time," recovering a
+  small, explicitly biased subset (see repro.py and
+  paper/docs/das-finwhale-soundspeed-plan-a-findings.md S3.1).
+objective: l1
+source_z: -30.0
+min_picks: 8
+batches: [1]
+tol_s: 90.0
+margin_s: 1.0

@@ -91,6 +91,31 @@ organizers publish the held-out test set, two proxies stand in:
 Treat this as a **goodness-of-fit proxy, not a position error** — a confidently
 wrong solution can have a small residual.
 
+## Imported from deep-voice/dclde_2027
+
+The DAS work from the earlier all-tasks repo (`deep-voice/dclde_2027`, branch
+`sound-speed-research` at `0191c54`) lives here next to the baseline above. Nothing above was changed.
+
+| Path | What |
+|---|---|
+| [src/dclde_localization/physics/](src/dclde_localization/physics/) | A second localization core: straight-ray forward model with free `c`, multi-basin grid solver with mirror-ambiguity handling, cable geometry in a local metric frame, GMRT bathymetry, picks snapshot loader, sound-speed profile and `ConstantC`/`PathAverage` models. Overlaps `geometry.py`/`picks.py`/`localize.py`; still to be compared and merged |
+| [tests/physics/](tests/physics/) | Its unit tests |
+| [fixtures/](fixtures/) | Small committed inputs shared by the core, `paper/` and `viz/`: both cables' geometry CSVs, the GMRT bathymetry grid, and the picks snapshot `das_calls.csv.gz` |
+| [paper/](paper/README.md) | Sound-speed and source-depth research for a publication (its own package, configs, results, docs, tests) |
+| [viz/](viz/README.md) | Single-file interactive localization visualizer (Python build plus JavaScript tests) |
+| [notebooks/](notebooks/) | Hands-on EDA of the strain images, cable geometry and picks (outputs stripped) |
+| [scripts/fetch_sample.py](scripts/fetch_sample.py) | Pulls single objects from the public bucket into `data/_samples/`; the notebooks use it |
+
+Run everything from the repo root:
+
+```bash
+uv pip install --python .venv -e . -r paper/requirements.txt -r viz/requirements.txt
+.venv/bin/python -m pytest tests -q          # baseline + physics core
+.venv/bin/python -m pytest paper/tests -q    # ~3 min
+.venv/bin/python -m pytest viz/tests -q
+(cd viz && npm test)                          # JavaScript, Node 18+
+```
+
 ## License
 
 The code in `src/`, `scripts/`, and `tests/` is MIT licensed — see

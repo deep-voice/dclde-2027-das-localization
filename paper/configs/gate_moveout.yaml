@@ -1,0 +1,128 @@
+name: gate_moveout
+notes: >
+  The Plan B gate. Design note:
+  paper/docs/specs/2026-09-21-plan-b-depth-observability-design.md
+
+  QUESTION. Does the moveout curve on real picks carry source-depth information
+  above the per-call noise? Plan A's transmission-loss study closed the
+  amplitude route -- the receiver-depth coefficient of received level has an
+  interval spanning zero in all 16 configurations -- so depth, if reachable at
+  all, is reachable through travel-time moveout. This measures whether it is,
+  before any depth machinery is built.
+
+  THE CRITERION, FIXED BEFORE THIS RAN AND APPLIED UNCHANGED.
+  Stratum: n_picks >= 8, receiver-depth span >= 200 m, basin-stable, solved
+  under the null. Statistic: per-call MARGINAL 1-sigma on source depth, from
+  profiling x and y out of the misfit at each candidate depth (t0 is analytic).
+  Proceed to depth observability only if at least 10% of the stratum AND at
+  least 50 calls achieve sigma_z <= 100 m.
+  Why 100 m: the null assumes -30 m and fin whales call shallow, so a
+  resolution coarser than +/-100 m cannot improve on simply assuming the null's
+  depth. Why 10% and 50 calls: enough to support stratified reporting, and
+  enough that the outcome is not carried by a few favourable geometries. It
+  asks whether a usable SUBSET exists, not whether depth works everywhere.
+
+  RECORDED SO THE THRESHOLD CANNOT LOOK REVERSE-ENGINEERED. A linearised
+  scoping estimate made before the plan (440 calls, >=100 m span) put ~33% of
+  calls below 200 m and roughly 15-18% below 100 m. That estimate is OPTIMISTIC
+  -- it treats the depth direction as independent of x, y and t0, and treats a
+  structured residual as white -- so the joint profile measured here will be
+  worse. The criterion is genuinely in play and may fail. Failing is a
+  complete, publishable outcome, not a reason to revisit the threshold.
+
+  OBJECTIVE. The profile is computed under L2, not the repo default L1, because
+  a Delta-chi-squared reading of a misfit width requires a Gaussian likelihood.
+  The L1 solve still supplies the starting position. Stated rather than assumed.
+
+  inversion_model is the null and is what the profile is computed against.
+  truth_model is unused by gate_table (which takes arrays, not an
+  ExperimentConfig) and is set to path_average only to satisfy the loader's
+  self-consistency guard, matching the convention in regime_shadow_zone.yaml.
+
+  ADDITIONS BEYOND THE ORIGINAL BRIEF (decided before this ran).
+  (A) Every in-stratum, resolvable call's depth profile is walked in BOTH
+  directions (deep-to-shallow, z_grid's own ascending order, and the
+  reverse) through z_grid, each warm-
+  starting (x, y) from the previous depth step's own optimum. This dataset
+  has explicit multi-basin structure (solve.py's mirror-lobe handling, the
+  visualizer's mirror-ambiguity badge), so a walk that tracks a local rather
+  than global (x, y) optimum at some depths would trace a smooth, believable,
+  WRONG profile that a single-direction walk cannot catch. `walk_consistent`
+  (the two sigma_z agree within 10%) gates resolution: a call is NOT counted
+  resolved, regardless of its (forward) sigma_z_m, when this check ran and
+  disagreed. bidirectional_sample/bidirectional_seed below record whether
+  this ran on every eligible call or a reproducible sample, decided from a
+  measured timing budget (see the run report) rather than from the outcome.
+  (B) n_cables (1 or 2, from the picks' own cable column) is recorded for
+  every call, motivated by a synthetic measurement made before this ran: with
+  receiver depth varying monotonically with along-cable position, 400 m of
+  source-depth error leaves only ~23 us of residual after re-fitting x and y
+  -- source depth becomes nearly exchangeable with an along-cable position
+  shift. A V-shaped depth profile recovers ~918 us for the same 400 m; two
+  arcs at different bearings recover ~3,044 us. 166 of 628 calls span both
+  cables. This is an additional reported dimension; the pre-declared
+  pass/fail criterion above is unchanged by it.
+
+  FIX ROUND 1 (post-run review of the first gate result).
+  MAJOR 1: the summary's `n_resolved` is a COMPOSITE of the pre-declared
+  criterion and the walk-consistency addition above; `n_resolved_forward_only`
+  (pre-declared criterion alone) and `walk_check_applied` are reported
+  alongside it so the pre-declared statistic is not lost inside the composite.
+  MAJOR 2: an undifferentiated `inf` in sigma_z_m conflated "the grid was too
+  shallow" with "the data never bound depth". `sigma_z_reason` now records
+  which: edge_deep (minimum at the grid's deep floor -- the GRID stopped the
+  walk, not the data), edge_surface (minimum at 0 m -- the physical sea
+  surface, not a grid-extension artifact), or not_crossed (interior minimum,
+  Delta-chi-squared=1 never reached both sides).
+  MEDIUM 3: delta_misfit_over_resid_sigma (delta_misfit divided by that same
+  call's own null-model residual noise) and gate_moveout_path_comparison.csv
+  report the direct-vs-bounce path comparison with its denominator and noise
+  context, not as a bare favour-count.
+  MEDIUM 4, TOLERANCE-INVARIANCE (load-bearing for the interpretation of the
+  direction-inconsistent calls, not just a style fix): _fit_xy and
+  _misfit_at_depth both use xatol=0.05, fatol=1e-13 (tightened from an
+  earlier draft's mismatched 0.05/0.1 split -- the tighter value, not the
+  looser one, because xatol=0.1 m is ~68 us of positional slop, EXCEEDING the
+  ~23 us of unresolvable depth signal this module's own docstring measures
+  for a monotonic single-cable geometry -- exactly the geometry of every
+  direction-inconsistent call). This tolerance was then stress-tested: five
+  direction-inconsistent stratum calls (including the largest curve
+  discrepancy in the whole stratum) were re-profiled forward and reverse at a
+  1000x tighter optimiser setting (xatol=1e-4, fatol=1e-16, maxfev=40000).
+    2021-11-04_02_02_32/2  fwd 11.201  rev inf      (curve discrepancy 6.91e-3)
+    2021-11-04_08_02_32/7  fwd 22.373  rev inf      (1.61e-2)
+    2021-11-04_08_05_02/7  fwd 21.557  rev 225.106  (9.73e-3)
+    2021-11-04_02_04_12/4  fwd 42.122  rev inf      (5.29e-3)
+    2021-11-04_08_03_22/7  fwd 17.926  rev 58.725   (9.96e-3)
+  Every value is tolerance-INVARIANT to printed precision at 1000x tighter
+  convergence: the forward/reverse disagreement is genuine multi-basin
+  local-minimum tracking (solve.py's own mirror-lobe documentation predicts
+  exactly this for single-cable geometry; all five calls above, and 16 of the
+  17 forward-resolved stratum calls, are single-cable), not optimiser
+  convergence slop. The same five-call check independently reproduced these
+  calls' committed gate_moveout.csv values exactly from raw picks via a
+  separately-written code path -- distinct from, and additional to, this run's
+  own regenerate-and-diff determinism check (see the run report).
+  MEDIUM 5: marginal_sigma_z's chi-squared crossing search now walks outward
+  from the minimum and stops at the FIRST (nearest) threshold crossing on
+  each side, rather than handing the whole half-profile to np.interp (which
+  silently assumes monotonicity -- false on a multi-modal profile, which is
+  exactly the failure the bidirectional walk check above exists to catch).
+  MINORS: profile_max_discrepancy_s (renamed from an earlier draft's
+  profile_max_discrepancy_db -- it is in seconds, the L2 misfit's own units,
+  not decibels); _walk_consistent's tolerance is max(10% relative, one grid
+  spacing) when a grid spacing is supplied, so two small sigma_z values a few
+  metres apart are not falsely flagged inconsistent by a relative test finer
+  than the grid resolves (measured to not change any verdict on this run:
+  smallest finite disagreement was 7.1 m against a 5 m grid spacing).
+truth_model: {kind: path_average, profile: hycom_south_deep}
+inversion_model: {kind: constant_c, c: 1480.0}
+min_picks: 8
+span_min_m: 200.0
+z_grid: {start: -600.0, stop: 0.0, n: 121}
+sigma_target_m: 100.0
+min_fraction: 0.10
+min_calls: 50
+flip_threshold_m: 500.0
+bidirectional_sample: null
+bidirectional_seed: 0

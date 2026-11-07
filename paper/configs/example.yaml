@@ -1,0 +1,11 @@
+name: example
+notes: >
+  Template. truth_model and inversion_model are both required and must differ
+  unless allow_same_model is set, so a self-consistent experiment cannot happen
+  by accident.
+truth_model: {kind: path_average, profile: oregon_nov}
+inversion_model: {kind: constant_c, c: 1480.0}
+objective: l1
+source_z: -30.0
+min_picks: 8
+cables: [North, South]

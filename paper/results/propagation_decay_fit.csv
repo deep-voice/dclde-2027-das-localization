@@ -1,0 +1,49 @@
+# experiment: propagation_decay_fit
+# generated: 2026-09-21T01:30:09Z
+# rows: 40
+# THIS TABLE IS DESCRIPTIVE, NOT THE PRE-REGISTERED HYPOTHESIS TEST. It fits FREE slopes for range, depth and (optionally) axial projection, and a reader is naturally invited to eyeball those coefficients against a physics benchmark (e.g. -10 for spherical spreading) -- spec section 6.4 forbids exactly that substitution for the actual hypothesis test. The pre-registered statistic is the DIFFERENCE IN FITTED LOG-LIKELIHOOD between H-geometric and H-modal, each offered as a FIXED shape (not a free slope), reported in propagation_hypothesis_test.csv -- that is where the actual pre-registered comparison lives, not here.
+# The censoring threshold is SWEPT, not a known instrument setting: the annotation snapshot does not record a detection threshold, and the observed pick SNR tails smoothly to zero with no sharp cliff (measured over all 11,117 picks: 31 [0.3%] at or below threshold=0, 172 [1.5%] at 4, 384 [3.5%] at 6, 1015 [9.1%] at 8). The fixed-threshold left-censoring (Tobit) model is therefore an APPROXIMATION to whatever the annotators actually did, and the correction it makes is small on this data -- do not read the swept values as a documented sensor property.
+# 31 of the 11,117 real annotation-snapshot picks carry exactly zero SNR; of those, 16 fall within the 8,660-pick eligible fitting sample used here (the other 15 belong to calls excluded upstream -- below min picks, unsolved, flipped, path-failed, or geometry-error -- see propagation_denominators.csv). Spec section 6.4 treats the 16 as censored AT the threshold rather than dropped (see decay_fit_table's docstring), but this table reports the fit BOTH ways -- see the zero_snr_rule column ('censored' keeps them in the sample folded into the ordinary below-threshold censoring mask; 'dropped' removes them before fitting) -- so the rule's own influence on the answer is visible rather than asserted away.
+# The regression carries an explicit projection term (10*log10(clip(axial_response, 1e-3, None)), floored -30 dB, affecting 5/8,660 real picks) because DROPPING it is a confound, not a simplification: pooled corr(10*log10(axial_response), log10(range_m)) is only -0.09 across all picks, but the fit has PER-CALL INTERCEPTS, so only the WITHIN-CALL variation identifies the range and depth slopes -- and the within-call correlation between the two is much stronger (mean 0.36, median 0.45, 78% of calls |corr| > 0.3, measured over the 381 real eligible calls). Within a call, longer-range picks are systematically more endfire and therefore sensed better, which pushes the extra long-range SNR into the range coefficient and biases the fitted decay SHALLOW if the term is omitted. The `projection` column ('fitted' includes this term as a free coefficient; 'omitted' drops it, reproducing the earlier, confounded regression) lets a reader see the difference directly rather than trust either alone.
+# This is a left-CENSORED (Type-I Tobit) likelihood, not a left-TRUNCATED one, and the two are not the same correction for the same problem. Censoring means a row is PRESENT with a value known only as a bound; truncation means sub-threshold rows are ABSENT from the sample entirely. The real DAS picks are truncated -- rows below whatever threshold the annotators used were never recorded at all -- but this fit is censored: `snr <= threshold` observations that ARE present in the data are treated as bounded-below observations, which tells the estimator both how many such picks exist and at what range/depth they occurred, information a genuinely truncated sample does not contain. The threshold sweep therefore measures robustness to DISCARDING low-SNR information (whether keeping it as a bound changes the answer much), not sensitivity to a detection threshold in the truncation sense the spec describes. The correct estimator for a genuinely truncated sample is a truncated-normal likelihood (subtracting log(1 - Phi((threshold - mu)/sigma)) per RETAINED observation, with no bounded-observation term at all, since there are no such rows) -- not implemented here; recorded as a follow-up, not undertaken as part of this task.
+threshold,term,estimate,ci_lo,ci_hi,n_picks,n_calls,n_censored,zero_snr_rule,projection,converged,n_draws,loglik
+0.0,log10_range,-6.002046404380003,-6.491255175937378,-5.510608149779648,8660,381,16,censored,fitted,True,200,-23404.28414299382
+0.0,receiver_depth_km,-0.7785027106236322,-2.0985952386253524,0.7313152301529222,8660,381,16,censored,fitted,True,200,-23404.28414299382
+0.0,axial_projection_db,0.1670699693354264,0.05806725653654889,0.3025819042326725,8660,381,16,censored,fitted,True,200,-23404.28414299382
+0.0,log10_range,-5.7191708699115935,-6.2116914997678325,-5.2972335753958,8660,381,16,censored,omitted,True,200,-23429.84418502665
+0.0,receiver_depth_km,-0.6358964950721867,-1.9614370744495162,0.7694418200748445,8660,381,16,censored,omitted,True,200,-23429.84418502665
+0.0,log10_range,-5.989267172941546,-6.468849111824609,-5.5041163243295985,8644,381,0,dropped,fitted,True,200,-23287.409654467083
+0.0,receiver_depth_km,-0.8190824495929709,-2.175423877000722,0.6276550442758378,8644,381,0,dropped,fitted,True,200,-23287.409654467083
+0.0,axial_projection_db,0.1662024366048942,0.05696121229589179,0.30034745921472367,8644,381,0,dropped,fitted,True,200,-23287.409654467083
+0.0,log10_range,-5.706182510541854,-6.202088203965993,-5.28479476928555,8644,381,0,dropped,omitted,True,200,-23313.12606017566
+0.0,receiver_depth_km,-0.6757971078092518,-2.0224448240154507,0.6649355397677656,8644,381,0,dropped,omitted,True,200,-23313.12606017566
+4.0,log10_range,-5.978740254831315,-6.447680052593464,-5.507588963298349,8660,381,93,censored,fitted,True,200,-23245.994398615036
+4.0,receiver_depth_km,-0.7637816624259486,-2.084401516075718,0.7505644010431142,8660,381,93,censored,fitted,True,200,-23245.994398615036
+4.0,axial_projection_db,0.16609290211076677,0.05815325639754207,0.3023209491621377,8660,381,93,censored,fitted,True,200,-23245.994398615036
+4.0,log10_range,-5.693703456700992,-6.182222855680079,-5.24503543977545,8660,381,93,censored,omitted,True,200,-23271.77312287969
+4.0,receiver_depth_km,-0.6175942258261502,-1.9500333807743613,0.7720716543736509,8660,381,93,censored,omitted,True,200,-23271.77312287969
+4.0,log10_range,-5.969965152173376,-6.431612361145074,-5.496074122044127,8644,381,77,dropped,fitted,True,200,-23179.17403191441
+4.0,receiver_depth_km,-0.7922997367184617,-2.145693772588117,0.6598504948462862,8644,381,77,dropped,fitted,True,200,-23179.17403191441
+4.0,axial_projection_db,0.16536658283658656,0.05732970032984546,0.3007863218182797,8644,381,77,dropped,fitted,True,200,-23179.17403191441
+4.0,log10_range,-5.68376343338769,-6.175259907361376,-5.235046813267697,8644,381,77,dropped,omitted,True,200,-23205.030252453216
+4.0,receiver_depth_km,-0.650225323962379,-1.9335255942051186,0.7024881225194849,8644,381,77,dropped,omitted,True,200,-23205.030252453216
+6.0,log10_range,-5.9355704226203745,-6.389116290755688,-5.493773500542321,8660,381,241,censored,fitted,True,200,-22990.028383904297
+6.0,receiver_depth_km,-0.7392627342652305,-2.031053506354321,0.6916308441177185,8660,381,241,censored,fitted,True,200,-22990.028383904297
+6.0,axial_projection_db,0.16539266267218553,0.055156974633456535,0.30271613186017055,8660,381,241,censored,fitted,True,200,-22990.028383904297
+6.0,log10_range,-5.671549551769934,-6.158124055724723,-5.2403700879546395,8660,381,241,censored,omitted,True,200,-23016.603874479253
+6.0,receiver_depth_km,-0.6485987495550911,-1.935931606851359,0.7515006990023467,8660,381,241,censored,omitted,True,200,-23016.603874479253
+6.0,log10_range,-5.927270803900201,-6.371462060238816,-5.470951500610233,8644,381,225,dropped,fitted,True,200,-22941.60448875752
+6.0,receiver_depth_km,-0.7695768649385343,-2.0481097374001673,0.6021337252040212,8644,381,225,dropped,fitted,True,200,-22941.60448875752
+6.0,axial_projection_db,0.16466953400086426,0.05486133152827777,0.301753512799095,8644,381,225,dropped,fitted,True,200,-22941.60448875752
+6.0,log10_range,-5.669716259502781,-6.139934027005848,-5.230048173274458,8644,381,225,dropped,omitted,True,200,-22968.15477616438
+6.0,receiver_depth_km,-0.6396132990857115,-1.932481018864959,0.7162592389204462,8644,381,225,dropped,omitted,True,200,-22968.15477616438
+8.0,log10_range,-5.7913421960456075,-6.5522182175974315,-5.386845027136309,8660,381,664,censored,fitted,True,200,-22252.387657374842
+8.0,receiver_depth_km,-0.45905918802076323,-2.050887822013194,0.972477057004833,8660,381,664,censored,fitted,True,200,-22252.387657374842
+8.0,axial_projection_db,0.15497752805343507,0.050994464565376,0.29894841663801786,8660,381,664,censored,fitted,True,200,-22252.387657374842
+8.0,log10_range,-5.557857784221619,-6.175681224923916,-5.155069607583493,8660,381,664,censored,omitted,True,200,-22278.25711405984
+8.0,receiver_depth_km,-0.3026976395054682,-1.906979017749827,0.915284067427315,8660,381,664,censored,omitted,True,200,-22278.25711405984
+8.0,log10_range,-5.814311191877087,-6.498479126428943,-5.374478506422452,8644,381,648,dropped,fitted,True,200,-22219.592169555024
+8.0,receiver_depth_km,-0.3915293725407655,-2.1139773323992315,0.8667137993425872,8644,381,648,dropped,fitted,True,200,-22219.592169555024
+8.0,axial_projection_db,0.1571800585706056,0.05155306878551538,0.29935315180019784,8644,381,648,dropped,fitted,True,200,-22219.592169555024
+8.0,log10_range,-5.555408173974896,-6.231411291850296,-5.214918808007283,8644,381,648,dropped,omitted,True,200,-22245.590390017096
+8.0,receiver_depth_km,-0.3177189362879996,-1.9576519334776448,0.9261568891367535,8644,381,648,dropped,omitted,True,200,-22245.590390017096

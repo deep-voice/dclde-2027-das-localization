@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+# Run from the repo root: `pytest viz/tests`. ".." makes `viz` importable.
+pythonpath = ["..", "../src"]
+testpaths = ["tests"]

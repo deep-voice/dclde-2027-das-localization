@@ -23,3 +23,10 @@ __pycache__/
 
 # Claude Code local state
 .claude/
+
+# Imported from deep-voice/dclde_2027
+viz/out/
+viz/node_modules/
+paper/data/reference/*
+!paper/data/reference/PROVENANCE.md
+data/_samples/

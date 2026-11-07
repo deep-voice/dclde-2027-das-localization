@@ -1,0 +1,79 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAS Fin-Whale Localization Explorer</title>
+<style>/*__CSS__*/</style>
+<div id="app">
+  <aside class="panel" id="rail">
+    <h1 style="font-size:15px;margin:0 0 8px">Localization Explorer</h1>
+    <div id="version-error" hidden style="color:var(--warn)"></div>
+    <div id="dataset-info"></div>
+    <label for="call-search">Call</label>
+    <input id="call-search" type="search" placeholder="filter calls…" style="width:100%">
+    <div id="call-list" style="margin-top:8px;max-height:40vh;overflow:auto"></div>
+  </aside>
+
+  <section id="map-wrap" class="panel">
+    <canvas id="map"></canvas>
+  </section>
+
+  <aside class="panel" id="side">
+    <div id="call-readout"></div>
+    <div id="legend">
+      <canvas id="legend-bar" height="14"></canvas>
+      <div id="legend-ticks"></div>
+      <div id="legend-caption">How much worse a position fits than the best fit.
+        Darkest is the best-fitting region; contours mark 1.05, 1.10, 1.25 and 1.50×.</div>
+      <div id="index-status" style="font-size:11px;color:var(--ink-dim);margin-top:6px"></div>
+      <div id="marker-key" style="font-size:11px;color:var(--ink-dim);margin-top:6px">
+        Open circles are one coarse solution per annotated call — click one to open it.
+        The ringed crosshair is the selected call's refined solution.
+        Filled dots are the reference implementation's published localizations; that CSV
+        carries no call ids, so those cannot be linked to the list.
+        Index markers are computed once at the default sound speed and depth, so they
+        do not move with the sliders; only the selected call's field and refined
+        solution do.
+      </div>
+    </div>
+    <label>Sound speed <span id="c-value"></span></label>
+    <input id="c-slider" type="range" min="1440" max="1520" step="1" value="1480">
+    <label>Assumed source depth <span id="z-value"></span></label>
+    <input id="z-slider" type="range" min="-200" max="0" step="5" value="-30">
+    <label>Cables</label>
+    <div id="cable-toggle"></div>
+    <label>Grid resolution</label>
+    <select id="res-select"><option>130</option><option selected>260</option><option>520</option></select>
+    <h2 style="font-size:13px;margin-top:16px">Moveout</h2>
+    <canvas id="moveout" height="180"></canvas>
+    <h2 style="font-size:13px">Misfit vs depth</h2>
+    <canvas id="zprofile" height="140"></canvas>
+    <div id="zprofile-context" style="font-size:11px;color:var(--ink-dim);margin-top:4px">
+      Source depth is essentially unobservable from two cables at similar depth.
+      Measured across 32 real calls, the best misfit varies by a median of just
+      <strong>0.3%</strong> over the whole −200…0 m range (worst case 1.0%). That is why every
+      published method for this dataset fixes source depth rather than estimating it —
+      the reference implementation's 176 solutions all carry z = −30 m exactly.
+    </div>
+    <h2 style="font-size:13px">Basin in 3D</h2>
+    <canvas id="inset3d" height="220" style="cursor:grab"></canvas>
+    <div id="inset3d-caption" style="color:var(--ink-dim);font-size:11px"></div>
+    <p style="color:var(--ink-dim);font-size:11px;margin-top:14px">
+      Bathymetry: GMRT (Global Multi-Resolution Topography) synthesis,
+      Ryan et al. 2009, doi:10.1029/2008GC002332.
+      Picks and cable geometry: DCLDE 2027 localization dataset, doi:10.25921/v2vh-8w16.
+    </p>
+  </aside>
+</div>
+<script type="module">
+const PAYLOAD = __PAYLOAD__;
+const APP_BUNDLE_VERSION = 1;
+if (PAYLOAD.bundleVersion !== APP_BUNDLE_VERSION) {
+  const el = document.getElementById("version-error");
+  el.hidden = false;
+  el.textContent =
+    `Bundle version ${PAYLOAD.bundleVersion} does not match app version ${APP_BUNDLE_VERSION}. ` +
+    `Rebuild with viz/build_bundle.py.`;
+  throw new Error("bundle/app version mismatch");
+}
+/*__LIB__*/
+/*__APP__*/
+</script>
