@@ -1,0 +1,8 @@
+two-cable calls kept: 117; dropped: 2 ({'gross misfit': 1, 'unsolved/ambiguous': 1})
+clusters: 12; sizes: [27, 27, 24, 14, 12, 3, 2, 2, 2, 2, 1, 1]
+
+held-out calls scored: 115 (in clusters of >= 2)
+own cluster: north smooth 83.6 -> 38.9 ms (lower in 106/115); total 99.1 -> 59.9 ms; south smooth 84.9 -> 38.8 ms (lower in 109/115); total 103.8 -> 57.1 ms
+   re-solve with corrected times: sigma 113.4 -> 70.5 ms (n=115), position shift median 182 m
+control (other cluster >= 3 km): north smooth 66.9 -> 102.7 ms (lower in 19/108); total 86.2 -> 124.2 ms; south smooth 84.7 -> 120.0 ms (lower in 19/97); total 102.8 -> 146.7 ms
+   re-solve with corrected times: sigma 112.6 -> 126.7 ms (n=109), position shift median 168 m
