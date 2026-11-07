@@ -241,6 +241,47 @@ residual" question.
    Not yet done: two-cable solves on the paired windows, and the full 271-call stratum (step 4).
    One-cable solves are basin-ambiguous for a third of calls, which is why 31 were excluded.
 
+   **2d. Two-cable solves on the paired windows (T-016, 2026-11-07).** Windows 2021-11-04
+   02:00:02, 08:09:12 and 12:00:02, North and South files for each. Every call annotated on both
+   cables gets dense picks on both: 17 calls (7 + 8 + 2). Same null, one t0 per call as in
+   `gate_table`. Script `paper/scripts/t005_step2d_two_cable.py`, output
+   `paper/results/t016_two_cable_<window>_calls.csv`.
+
+   | Solve (dense picks) | basin-ambiguous (> 500 m) | unsolved |
+   |---|---|---|
+   | North alone | 2 / 17 | 5 / 17 |
+   | South alone | 2 / 17 | 0 / 17 |
+   | both cables | 0 / 17 | 0 / 17 |
+
+   - **Two cables fix the ambiguity.** One-cable positions are often far from the two-cable
+     solution: median shift 853 m for South alone, 11.1 km for North alone (North spans are short:
+     median ~150 stations against ~375 on South).
+   - **The smooth term grows rather than shrinks** once both cables pin the position. Median σ of
+     the ~1 km smooth residual, per cable:
+
+     | Cable | one-cable solve | two-cable solve |
+     |---|---|---|
+     | North (n = 12 solved alone) | 37.7 ms | 63.0 ms |
+     | South | 66.1 ms | 114.4 ms |
+
+     Pooled per cable under the two-cable solve: 89.4 ms (IQR 59.0–121.2). A one-cable solve
+     absorbs part of the model error by moving the source; with two cables it cannot. So the step-2c
+     figure of ~61 ms was, if anything, an underestimate. This is the opposite of what an artifact
+     of single-cable geometry would do.
+   - **Inter-cable offset.** Under one shared t0, the North minus South median residual is +38 ms
+     (median), with |offset| median 72 ms. Two calls (02:00:02/10 and /13) reach about +410 ms; both
+     have short North spans (64 and 82 stations). Could be a timing offset between the cables'
+     files, a mis-associated North track, or model error; not separated yet.
+   - Overall residual σ, two-cable: dense 119.5 ms vs annotation 117.0 ms (median; dense lower in
+     13 of 17). No net gain, as expected when the model term dominates.
+   - Call 02:00:02/6 has σ ≈ 1,250 ms under both pick sets: a gross misfit (probably a
+     mis-associated track). It is kept in the table and noted here, not removed.
+
+   **For T-017:** build the correction on two-cable calls (reliable positions; 0/17 ambiguous). Fit
+   it per cable, with a per-cable offset term, because the inter-cable offset is not zero. Only 17
+   two-cable calls sit in these three windows. T-017 needs more paired windows; the fixture has
+   166 two-cable calls in total.
+
 3. **Validate the picker (~2h).** (a) At the annotated channels, compare dense picks with the
    annotation picks; the spread of that difference bounds annotation error. (b) Inject a synthetic
    chevron of known moveout into a noise-only stretch and measure recovery error.
