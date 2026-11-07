@@ -65,6 +65,32 @@ residual" question.
    `xarray` + `h5netcdf` to the environment, and record dims, time step, channel spacing and the
    variables (`SNR_lf`, `SNR_hf`). Time step and channel spacing set the best achievable pick
    precision.
+
+   **Result (2026-11-07).** File: `detections/batch_1/Denoised_SNR_South_2021-11-04_02-00-02.nc`,
+   1.01 GB, chosen because it holds 9 stratum calls (157 of its 166 picks). Downloaded with
+   `aws s3 cp` from our mirror into `data/_samples/` (gitignored).
+   - Variables: `SNR_hf` and `SNR_lf`, float64 on dims (dist 20,325 × time 14,000); about 5 GB in
+     memory, so read rows lazily. The `utc_time` coordinate is on `time`.
+   - Time: fs = 200 Hz (5 ms step), 0–69.995 s.
+   - Distance: 11,998–94,998 m along the cable, every 4.084 m (every 2nd channel of dx = 2.042 m;
+     `selected_channels` 5876–46525 step 2). Gauge length 51.0 m, so channels closer than ~51 m are
+     not independent; decimate picks to ≥ 51 m before any χ².
+   - Other attributes: `n` = 1.4682 (fibre refractive index), `scale_factor` 2.02e-13,
+     `fileBeginTimeUTC` 2021-11-04_02:00:02.
+
+   **Early look at step 3a (one window, n = 166 picks, 10 calls; not a result).** At each
+   annotation pick's nearest channel (within ±2 m), the SNR peak within ±2 s of the pick:
+   - Annotation picks sit on the SNR envelope peak: median peak − pick = −0.9 ms. The CSV `snr`
+     column matches the image value at the pick (median 15.7 vs 16.0).
+   - The envelope is broad: median FWHM 350 ms (IQR 295–420 ms).
+   - Peak − pick scatter is a robust σ of 33.6 ms (plain sd 65 ms, tail to +456 ms). Per call the
+     spread ranges from 22 to 115 ms.
+   - So the annotations look like peak picks on a ~350 ms-wide envelope. Taking the peak of a broad,
+     noisy envelope is a jittery estimator, and it would not get much better at higher SNR when the
+     envelope's shape varies from channel to channel. That fits step 0. **Implication for step 2:**
+     pick by cross-correlating the envelope shape across neighbouring channels (stack over the
+     ~51 m gauge, align, sub-sample interpolate), not by per-channel peak.
+
 2. **Picker (~4h).** For each annotated call, seed with its sparse picks, interpolate the moveout,
    and track the SNR peak channel by channel inside a ± window around it, with sub-sample peak
    interpolation and an SNR gate. Decimate to channels at least one coherence length apart, so the
