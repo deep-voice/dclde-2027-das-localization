@@ -1,0 +1,5 @@
+# experiment: gate_moveout_path_comparison
+# generated: 2026-09-21T17:11:21Z
+# rows: 1
+n_compared,n_favor_direct,n_favor_bounce,n_tied,n_ratio_finite,n_exceeds_own_noise,n_chi2_finite,n_direct_sig_1sigma,n_direct_sig_2sigma,n_direct_sig_3sigma,n_bounce_sig_1sigma,n_bounce_sig_2sigma,n_bounce_sig_3sigma,delta_misfit_mean,delta_misfit_median,delta_misfit_std,delta_misfit_min,delta_misfit_max,delta_misfit_over_resid_sigma_mean,delta_misfit_over_resid_sigma_median,delta_misfit_over_resid_sigma_std,delta_misfit_over_resid_sigma_min,delta_misfit_over_resid_sigma_max,delta_chi2_mean,delta_chi2_median,delta_chi2_std,delta_chi2_min,delta_chi2_max
+266,235,31,0,266,0,266,136,66,22,14,7,1,0.002733648941463934,0.0014210456422579024,0.003787236186727819,-0.004605972826052629,0.022398741252296045,0.040443907943730796,0.015291794137819278,0.08558035605402003,-0.22260887597345333,0.5794128369144556,5.041194964800953,1.0252541298259996,31.380425860490273,-11.55818916315154,495.9411457082634

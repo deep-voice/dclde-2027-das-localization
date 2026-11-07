@@ -1,0 +1,14 @@
+# experiment: depth_signal_vs_noise_summary
+# generated: 2026-10-07T17:37:21Z
+# rows: 7
+# depth shift -30 m -> -130 m, (x, y) re-minimised at both (L2); c = 1480 m/s
+# denominator: the gate's 271-call stratum (n_picks >= 8, receiver-depth span >= 200 m, basin-stable)
+# single-direction profiles; the gate's walk-consistency check is not applied, so the tail is partly artifact
+group,n_calls,median_abs_dchi2,n_ge_1sigma,n_ge_2sigma,n_ge_3sigma,median_rms_equiv_ms,median_noise_ms
+all stratum,271,0.7870874688224034,122,32,17,12.676500028776463,97.76553986068542
+n_cables=1,115,1.600167913219451,71,27,17,12.597643395234272,48.3081761187994
+n_cables=2,156,0.46783185720391474,51,5,0,12.692435323972486,106.5911097526936
+"n_picks in (7, 15]",65,1.3848961420230141,37,14,9,9.49138945881132,44.75236924090845
+"n_picks in (15, 25]",75,1.0038806275007917,38,13,8,15.842271376070288,89.32170413526003
+"n_picks in (25, 40]",93,0.46711800098992556,32,4,0,12.771933053967286,107.30581687809878
+"n_picks in (40, 100]",38,0.691440630862111,15,1,0,12.979524958472972,102.9738731530515

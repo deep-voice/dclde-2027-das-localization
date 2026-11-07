@@ -1,0 +1,38 @@
+# experiment: repro_join_feasibility
+# generated: 2026-09-16T20:46:25Z
+# rows: 34
+sweep_type,param_value,metric,value,n_total
+tol_s,90.0,matched,0,176
+tol_s,90.0,ambiguous,176,176
+tol_s,90.0,unmatched,0,176
+tol_s,30.0,matched,0,176
+tol_s,30.0,ambiguous,176,176
+tol_s,30.0,unmatched,0,176
+tol_s,10.0,matched,1,176
+tol_s,10.0,ambiguous,174,176
+tol_s,10.0,unmatched,1,176
+tol_s,5.0,matched,4,176
+tol_s,5.0,ambiguous,154,176
+tol_s,5.0,unmatched,18,176
+tol_s,2.0,matched,21,176
+tol_s,2.0,ambiguous,93,176
+tol_s,2.0,unmatched,62,176
+tol_s,1.0,matched,33,176
+tol_s,1.0,ambiguous,34,176
+tol_s,1.0,unmatched,109,176
+margin_s,1.0,matched,21,176
+margin_s,1.0,contested,57,176
+margin_s,1.0,ambiguous,98,176
+margin_s,1.0,unmatched,0,176
+margin_s,2.0,matched,16,176
+margin_s,2.0,contested,32,176
+margin_s,2.0,ambiguous,128,176
+margin_s,2.0,unmatched,0,176
+margin_s,3.0,matched,10,176
+margin_s,3.0,contested,21,176
+margin_s,3.0,ambiguous,145,176
+margin_s,3.0,unmatched,0,176
+margin_s,5.0,matched,4,176
+margin_s,5.0,contested,7,176
+margin_s,5.0,ambiguous,165,176
+margin_s,5.0,unmatched,0,176

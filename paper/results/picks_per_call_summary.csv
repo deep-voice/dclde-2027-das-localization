@@ -1,0 +1,6 @@
+# experiment: picks_per_call_summary
+# generated: 2026-10-07T17:37:21Z
+# rows: 1
+# denominator: all 628 annotated calls / 11,117 picks
+calls,picks,median_picks,mean_picks,min_picks,max_picks,calls_ge_4,calls_ge_8,calls_ge_20,calls_two_cable,median_picks_on_sparser_cable_two_cable_calls
+628,11117,14.0,17.702229299363058,3,61,627,524,191,166,14.0

@@ -1,0 +1,47 @@
+name: propagation_tl
+notes: >
+  Result 1 of the transmission-loss design (spec section 6.2). Pure forward
+  calculation, no data: does a mode trapped at these geometries survive 5-40 km
+  and does a source at -30 m excite it.
+
+  truth_model names hycom_south_deep for the same reason
+  regime_shadow_zone.yaml does: oregon_nov is hand-typed indicative numbers,
+  never measured or reanalysis, and no conclusion may rest on it.
+  hycom_south_deep covers 0-1500 m (98.4% of picks) and was itself never
+  validated in-situ -- its credibility is inferred from hycom_oregon_nov's
+  0.47 m/s median agreement with in-situ CTD 87 km away at the shallower OOI
+  site. Every profile-dependent number here inherits that caveat; the spec's
+  two-independent-product bar (WOA23) is still unmet.
+
+  inversion_model is unused by predicted_tl_table (which takes a profile
+  directly, not an ExperimentConfig) and is set to constant_c only to satisfy
+  the loader's self-consistency guard, matching regime_shadow_zone.yaml.
+
+  SEABED SWEEP PROVENANCE. Seabed geoacoustics are unknown at this site, so
+  they are swept and the spread across the sweep IS the uncertainty. The middle
+  three entries are the ones regime_shadow_zone.yaml already used; this config
+  widens them at both ends to span soft mud through sand/gravel, following the
+  standard geoacoustic compilations for continental-margin sediments (Hamilton,
+  "Geoacoustic modeling of the sea floor", JASA 68:1313, 1980, and the
+  sediment-property tables in Jensen et al., Computational Ocean Acoustics).
+  NO OREGON-MARGIN-SPECIFIC MEASUREMENT WAS FOUND for these two cables. The
+  sweep width therefore stands in for site uncertainty and must not be
+  presented as site knowledge. If a site-specific source turns up, narrow the
+  sweep and say so here.
+truth_model: {kind: raytrace, profile: hycom_south_deep}
+inversion_model: {kind: constant_c, c: 1480.0}
+freq_hz: 20.0
+n_steps: 48
+seabed_sweep:
+  - {c: 1500.0, rho: 1.4, alpha: 0.02}   # soft mud, barely faster than water
+  - {c: 1550.0, rho: 1.5, alpha: 0.05}
+  - {c: 1700.0, rho: 1.8, alpha: 0.15}
+  - {c: 1900.0, rho: 2.1, alpha: 0.40}
+  - {c: 2100.0, rho: 2.3, alpha: 0.80}   # sand/gravel
+# (source_z, receiver_z, range, water_depth_at_source, water_depth_at_receiver)
+geometries:
+  - [30.0, 100.0, 5000.0, 200.0, 120.0]
+  - [30.0, 150.0, 10000.0, 600.0, 200.0]
+  - [30.0, 500.0, 20000.0, 1200.0, 600.0]
+  - [30.0, 1000.0, 30000.0, 1400.0, 1100.0]
+  - [30.0, 1575.0, 40000.0, 1600.0, 1600.0]

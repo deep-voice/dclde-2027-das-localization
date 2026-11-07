@@ -1,0 +1,21 @@
+<section id="modes" data-transition="fade" style="background:#F6F4EE; color:#1B2A36; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px"><div style="display:flex; flex-direction:column; gap:16px"><p style="font-size:24px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#0B7A73">Plan A · 5</p><h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.1; color:#1B2A36">Ray theory says “shadow”; modes say “weak but open”</h2></div><div style="display:flex; flex-direction:row; gap:48px; flex:1"><div style="flex:1; display:flex; flex-direction:column; gap:20px"><svg aria-label="Ray picture: rays from a shallow source bend downward into the seabed, leaving a shaded shadow zone near a distant shallow receiver" width="760" height="420" viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="20" width="760" height="400" fill="#DCEEEC"/>
+<line x1="0" y1="20" x2="760" y2="20" stroke="#1B2A36" stroke-width="2"/>
+<path d="M300 22 L760 22 L760 150 C600 150 450 110 300 22 Z" fill="#D9713F" fill-opacity="0.22"/>
+<path d="M0 360 C200 370 500 380 760 390 L760 420 L0 420 Z" fill="#D8D3C4"/>
+<g fill="none" stroke="#5B6CB0" stroke-width="3">
+<path d="M40 50 C200 60 330 150 420 372"/><path d="M40 50 C180 70 260 170 300 368"/><path d="M40 50 C140 90 190 190 200 366"/><path d="M40 50 C260 55 430 140 560 381"/>
+</g>
+<circle cx="40" cy="50" r="11" fill="#1B2A36"/>
+<circle cx="690" cy="92" r="11" fill="#D9713F" stroke="#F6F4EE" stroke-width="3"/>
+</svg><h3 style="font-size:32px; font-weight:600; color:#1B2A36">Rays: no direct path</h3><p style="font-size:26px; line-height:1.45; color:#4A5864; ">A downward-refracting profile bends every ray into the seabed — the distant receiver sits in shadow.</p></div><div style="flex:1; display:flex; flex-direction:column; gap:20px"><svg aria-label="Mode picture: three standing-wave mode shapes spanning the water column carry energy along the waveguide" width="760" height="420" viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="20" width="760" height="400" fill="#DCEEEC"/>
+<line x1="0" y1="20" x2="760" y2="20" stroke="#1B2A36" stroke-width="2"/>
+<path d="M0 360 C200 370 500 380 760 390 L760 420 L0 420 Z" fill="#D8D3C4"/>
+<g fill="none" stroke-width="4">
+<path d="M150 22 C230 120 230 260 150 380" stroke="#0F9A92"/>
+<path d="M360 22 C440 90 440 150 360 200 C280 250 280 330 360 380" stroke="#5B6CB0"/>
+<path d="M570 22 C630 60 630 100 570 140 C510 180 510 220 570 260 C630 300 630 340 570 380" stroke="#D9713F"/>
+</g>
+<g stroke="#8A949C" stroke-width="2"><line x1="150" y1="22" x2="150" y2="380"/><line x1="360" y1="22" x2="360" y2="380"/><line x1="570" y1="22" x2="570" y2="380"/></g>
+</svg><h3 style="font-size:32px; font-weight:600; color:#1B2A36">Modes: at least one survives</h3><p style="font-size:26px; line-height:1.45; color:#4A5864; ">At 20 Hz the guide is only 1–21 wavelengths deep. ≥ 1 trapped mode in all 5 “shadowed” geometries, every seabed.</p></div></div><p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#66727C">Illustration — schematic. Mode solver validated 224/224 against the analytic Pekeris waveguide.</p><aside>Ray tracing called all five test geometries (5-40 km, receivers 100-1575 m) shadowed. A normal-mode solver found 1-2 modes at the shallowest up to 13-27 at the deepest, for every seabed in a 1550-1900 m/s sweep. So the argument to abandon the straight-line model was a ray artifact. Follow-up transmission-loss work: modes exist but a 20 Hz source at 30 m barely excites them (excitation_rms never above 0.075), and shallow water strips about half of them by 20 km.</aside></section>

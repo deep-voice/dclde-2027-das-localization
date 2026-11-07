@@ -1,0 +1,64 @@
+name: propagation_data
+notes: >
+  Results 2 and 3 of the transmission-loss design (spec sections 6.3, 6.4).
+
+  POSITIONS ARE AN INPUT, NOT A RESULT. Range needs a source position, and
+  source positions come from solve(), which uses a propagation model -- the
+  thing under test. inversion_model below is the model that SUPPLIES those
+  positions (ConstantC, the existing baseline). Plan A section 3.5 measured the
+  sensitivity: a depth-dependent effective c moves basin-stable positions a
+  median 9.0-9.5 m, negligible as a covariate at 5-40 km. Basin-flipping calls
+  are excluded entirely, because for those the figure is a median 1,273 m and
+  that argument does not hold.
+
+  THRESHOLD SWEEP. The detection threshold is not recorded in the annotation
+  snapshot, so it is swept rather than invented. The observed pick SNR runs
+  0.00-31.50 with p25 10.46 and median 13.54 (n = 11,117); 31 picks are exactly
+  zero and are treated as censored AT the threshold rather than dropped, with
+  the table reporting the result both ways so the rule's influence is visible.
+
+  PRE-REGISTERED HYPOTHESIS TEST (spec section 6.4/7, added in fix round 1).
+  decay_fit_table's free-slope regression above is DESCRIPTIVE ONLY. The
+  actual pre-registered statistic pins each hypothesis's predicted
+  (range, depth) shape as a FIXED offset and compares the two by DELTA
+  LOG-LIKELIHOOD, with a whole-call bootstrap interval -- see
+  hypothesis_comparison_table. H-modal's shape is computed per pick from THIS
+  frame's real bathymetry path (via depth_along_path), not the idealised
+  linear paths propagation_tl.csv uses, because this frame has the real path
+  and substituting the coarse grid would knowingly weaken the one test the
+  spec pre-registers.
+
+  seabed_sweep below is the SAME five entries as propagation_tl.yaml's sweep
+  (see that config's notes for provenance: swept because geoacoustics are
+  unknown at this site, no Oregon-margin-specific measurement was found, and
+  spec section 5.6 makes the sweep the study's whole treatment of that
+  uncertainty -- "the spread across the sweep IS the uncertainty"). Spec
+  section 7's "undecidable" branch is partly defined by whether delta
+  log-likelihood CHANGES SIGN across this sweep, which is why every seabed
+  is run rather than one representative value, even though that costs
+  materially more than a single seabed would.
+
+  hypothesis_threshold/hypothesis_zero_snr_rule fix ONE point on the
+  threshold x zero-SNR-rule grid decay_fit_table sweeps, rather than
+  repeating that whole sweep for six hypothesis fits per point (measured
+  cost would multiply six-fold for a robustness check the descriptive
+  result above already covers with its own both-ways reporting).
+truth_model: {kind: raytrace, profile: hycom_south_deep}
+inversion_model: {kind: constant_c, c: 1480.0}
+source_z: -30.0
+min_picks: 8
+flip_threshold_m: 500.0
+n_bootstrap: 200
+seed: 0
+threshold_sweep: [0.0, 4.0, 6.0, 8.0]
+hypothesis_threshold: 0.0
+hypothesis_zero_snr_rule: censored
+hypothesis_freq_hz: 20.0
+hypothesis_n_steps: 32
+hypothesis_nz: 400
+seabed_sweep:
+  - {c: 1500.0, rho: 1.4, alpha: 0.02}   # soft mud, barely faster than water
+  - {c: 1550.0, rho: 1.5, alpha: 0.05}
+  - {c: 1700.0, rho: 1.8, alpha: 0.15}
+  - {c: 1900.0, rho: 2.1, alpha: 0.40}
+  - {c: 2100.0, rho: 2.3, alpha: 0.80}   # sand/gravel

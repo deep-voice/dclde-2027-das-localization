@@ -1,0 +1,30 @@
+name: ablation_effective_c
+notes: >
+  Section 7.3. PathAverage and RayTrace against ConstantC and against the
+  free-c fit. RayTrace reports the fraction of picks with no direct ray; where
+  that fraction is large the comparison is between two models that both
+  describe propagation that did not happen, and the report must say so.
+
+  Uses hycom_south_deep (0-1500 m, 98.4% pick coverage), not oregon_nov --
+  oregon_nov's numbers are hand-typed indicative values nobody measured, and
+  no conclusion here may rest on them (see experiments/runner.py's PROFILES
+  commentary and experiments/regime.py's _profile_validation_note).
+
+  `truth_model`/`inversion_model` are deliberately NOT present here (Task 14
+  whole-branch review, Critical 2 -- the same class of fix already applied to
+  ablation_free_c.yaml): this is a two-arm ablation, PathAverage(profile) AND
+  RayTrace(profile) each compared against ConstantC(1480) as the null, so a
+  single truth_model/inversion_model pair cannot describe what actually runs
+  without naming only one of the two arms. An earlier version of this file
+  declared `truth_model: {kind: raytrace, ...}`, which named only the
+  RayTrace arm while the committed `ablation_effective_c.csv` also has a
+  `path_average vs constant` row with no config expression at all -- a config
+  asserting less than what it produces. `run_ablation_effective_c` (in
+  paper/scripts/run_experiment.py) builds both models itself, from
+  `profile: hycom_south_deep` below and `experiments.ablation.effective_c_report`,
+  and does not read a truth_model/inversion_model key.
+profile: hycom_south_deep
+objective: l1
+source_z: -30.0
+min_picks: 8
+flip_threshold_m: 500.0

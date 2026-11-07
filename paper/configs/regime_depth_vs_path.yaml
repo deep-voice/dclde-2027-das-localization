@@ -1,0 +1,24 @@
+name: regime_depth_vs_path
+notes: >
+  Section 7.0.1. Sweep assumed source depth and watch the residual range trend.
+  A trend that flattens means the signal is source depth; one that persists
+  means it is the propagation path, and the sound-speed programme is aimed at
+  the wrong term. This experiment is allowed to conclude the latter.
+
+  The driver deliberately runs the sweep with `truth_model` (constant_c,
+  matching section 2.5C's own measurement setup) held fixed, varying only
+  assumed source depth -- that is the one change needed to separate the
+  confound. `inversion_model` names hycom_south_deep (not oregon_nov) so that
+  if a later task in this series reads this config to build a real,
+  profile-based model, it does not pick up oregon_nov's hand-typed, never
+  measured numbers. hycom_south_deep itself was never validated against
+  in-situ data either -- see soundspeed/reanalysis.py's module docstring --
+  its credibility is inferred from hycom_oregon_nov's 0.47 m/s agreement with
+  in-situ 87 km away and shallower, not measured at this profile's own site.
+truth_model: {kind: constant_c, c: 1480.0}
+inversion_model: {kind: path_average, profile: hycom_south_deep}
+objective: l1
+source_z: -30.0
+min_picks: 8
+source_z_sweep: [-5.0, -15.0, -30.0, -60.0, -100.0, -150.0, -200.0]
+range_bins_m: [0, 5000, 10000, 20000, 30000, 200000]

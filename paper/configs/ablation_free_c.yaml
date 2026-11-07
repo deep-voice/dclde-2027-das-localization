@@ -1,0 +1,37 @@
+name: ablation_free_c
+notes: >
+  Section 7.2. Add c as a free scalar per call and measure how far the
+  best-fit position moves against fixed 1480.
+
+  REVISED (review round 1 of task-13): the free scalar does NOT cleanly
+  absorb the effect as an interior, physically plausible speed. Of 498
+  fitted calls, only 23 (4.6%) land inside hycom_south_deep's own measured
+  range (~1477.5-1497.5 m/s); 208 (41.8%) pin at this config's own outer
+  search-bracket edge (1430 or 1530 m/s -- not real water at this site).
+  Restricted to basin-stable calls, edge-pinned fits shift a median 250 m
+  vs. 59 m for physically plausible fits. A free c is mostly absorbing model
+  and association error, not sound speed, and is therefore NOT usable as the
+  null model the depth experiment must beat -- see
+  paper/src/dclde_soundspeed/experiments/ablation.py's module docstring and
+  task-13-report.md for the full numbers.
+
+  Ruling R8 overrides the original brief's single flat c_grid pass: fit_free_c
+  profiles c with three coarse-to-fine 9-point passes per call (27 solve()
+  calls per call, not ~40) instead of one solve() per grid value. `c_grid`
+  below still supplies the outer bracket (start/stop); `step` is no longer a
+  grid spacing -- it is read only as the stopping tolerance to compare the
+  achieved resolution against when reporting the fit (see
+  task-13-report.md). R8's original "smooth, near-unimodal" justification is
+  itself only partially supported by this run (37.5% of calls flip basin
+  under the free-c search) -- see the module docstring's CAVEAT.
+
+  `truth_model`/`inversion_model` are deliberately NOT present here (review
+  round 1, Finding 5): fit_free_c() only ever fits/compares ConstantC at
+  different c values -- it does not read a profile-based inversion model at
+  all -- so those two keys previously declared in this file misdescribed
+  what the run actually does. Do not add them back without also making
+  fit_free_c() consume them.
+source_z: -30.0
+min_picks: 8
+c_grid: {start: 1430.0, stop: 1530.0, step: 2.5}
+flip_threshold_m: 500.0

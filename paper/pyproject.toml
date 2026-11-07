@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dclde-soundspeed"
+version = "0.1.0"
+description = "Sound-speed / source-depth research on the DCLDE 2027 DAS fin-whale data (paper work)"
+requires-python = ">=3.12"
+dynamic = ["dependencies"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.pytest.ini_options]
+# Run from the repo root: `pytest paper/tests`. File paths in the code are
+# relative to the repo root; ".." puts the root on sys.path for `paper.scripts`.
+pythonpath = ["..", "src", "../src"]
+testpaths = ["tests"]
+markers = ["smoke: fast end-to-end guard (pytest paper/tests -m smoke)"]
