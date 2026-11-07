@@ -146,6 +146,53 @@ residual" question.
      stations, 92.0 ms all stations. One window, one cable, 10 calls; not offered as the step-4
      result.
 
+   **2b. What the smooth term is (2026-11-07, same window, same 10 calls).** Script
+   `paper/scripts/t005_step2b_smooth_term.py`, output
+   `paper/results/t005_step2b_south_2021-11-04_02-00-02_{calls,stations,pairs}.csv`.
+
+   *Test 1: does it depend on how the arrival is defined?* At every kept station the arrival was
+   measured four ways on the same trace, and each set solved under the same null. Median σ of the
+   ~1 km smooth residual:
+
+   | xcorr | peak | centroid | onset (50% leading edge) |
+   |---|---|---|---|
+   | 67.8 ms | 75.6 ms | 69.5 ms | 99.7 ms |
+
+   - The xcorr and onset smooth curves have the same shape (median r = 0.97 over the 10 calls).
+   - xcorr minus onset varies smoothly by only ~22 ms. It tracks envelope width (r = 0.94), partly
+     by construction, since a half-height onset moves with width.
+   - So envelope-shape drift exists but is a minor part. The smooth term is in the arrival time
+     itself, whatever point of the envelope is picked.
+
+   *Test 2: does it repeat for calls from the same place?* The 10 calls fall in three position
+   clusters (solved positions within ~0.3 km; probably repeat calls from three whales). Smooth
+   residual curves, compared over ≥ 3 km of shared cable:
+
+   | Pairs | n | correlation, median (range) |
+   |---|---|---|
+   | sources < 1 km apart | 9 | 0.86 (0.78 to 0.94) |
+   | sources 3.2–6.7 km apart | 13 | 0.03 (−0.24 to 0.19) |
+
+   - The pattern is reproducible call to call from the same place, and different from a different
+     place on the same stretch of cable.
+   - That rules out random picker noise, and (with step 0's split-half test) a fixed per-channel
+     static.
+
+   **Conclusion (one window; to confirm on more).** The ~68 ms smooth residual is a deterministic,
+   source-position-dependent travel-time error of the straight-ray ConstantC(1480) model, at km
+   scale along the cable. Candidates are propagation the model lacks (bathymetry-driven paths,
+   refraction) or km-scale cable-position error that only shows up differently per source
+   azimuth. Consequences:
+   - Better picks alone cannot reach the ~13 ms depth signal on this data; the model term must be
+     reduced first.
+   - Per-call χ² that treats this term as white noise is wrong in a specific way: it is correlated
+     along the cable and repeats across calls from one position.
+   - It gives a handle the sparse picks never had: repeat calls from one position give replicate
+     residual curves, so a position-dependent correction can be estimated and cross-validated.
+   - Caveat: cluster 1 (calls 1, 3, 15, near x = 37 km) has very large smooth curves (rms
+     335–434 ms over 32–36 km). Check that cluster for a wrong basin or far-range breakdown before
+     generalising.
+
 3. **Validate the picker (~2h).** (a) At the annotated channels, compare dense picks with the
    annotation picks; the spread of that difference bounds annotation error. (b) Inject a synthetic
    chevron of known moveout into a noise-only stretch and measure recovery error.
