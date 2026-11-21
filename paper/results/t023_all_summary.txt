@@ -1,0 +1,58 @@
+2021-11-04_02_00_02: 7 two-cable calls
+2021-11-03_22_09_02: 4 two-cable calls
+2021-11-03_22_09_52: 3 two-cable calls
+2021-11-03_22_10_42: 3 two-cable calls
+2021-11-03_22_11_32: 2 two-cable calls
+2021-11-03_22_12_22: 2 two-cable calls
+2021-11-03_22_14_02: 1 two-cable calls
+2021-11-03_22_14_52: 3 two-cable calls
+2021-11-03_22_15_42: 2 two-cable calls
+2021-11-03_22_16_32: 3 two-cable calls
+2021-11-03_22_17_22: 3 two-cable calls
+2021-11-03_22_18_12: 3 two-cable calls
+2021-11-04_16_06_02: 1 two-cable calls
+2021-11-04_16_06_52: 2 two-cable calls
+2021-11-04_16_07_42: 2 two-cable calls
+2021-11-04_16_08_32: 1 two-cable calls
+2021-11-04_16_11_02: 3 two-cable calls
+2021-11-04_16_11_52: 5 two-cable calls
+2021-11-04_16_12_42: 4 two-cable calls
+2021-11-04_16_13_32: 4 two-cable calls
+2021-11-04_16_14_22: 3 two-cable calls
+2021-11-04_16_15_12: 2 two-cable calls
+2021-11-04_08_00_02: 6 two-cable calls
+2021-11-04_08_00_52: 5 two-cable calls
+2021-11-04_08_01_42: 5 two-cable calls
+2021-11-04_08_02_32: 5 two-cable calls
+2021-11-04_08_03_22: 1 two-cable calls
+2021-11-04_08_04_12: 1 two-cable calls
+2021-11-04_08_05_02: 1 two-cable calls
+2021-11-04_08_05_52: 5 two-cable calls
+2021-11-04_08_06_42: 6 two-cable calls
+2021-11-04_08_07_32: 5 two-cable calls
+2021-11-04_08_08_22: 6 two-cable calls
+2021-11-04_08_09_12: 8 two-cable calls
+2021-11-04_12_00_02: 2 two-cable calls
+
+calls: 119 (HF 71, LF 48)
+
+[north] medians
+  stations: grid 359, dense kept 316, find_peaks 307, common 291
+  per-channel find_peaks coverage 0.82
+  annotation picks on a find_peaks peak: 0.08 (mean 0.09)
+  neighbour noise (51 m; correlated by the ~46 m SNR blur), common stations: dense 14.7 ms, find_peaks 13.1 ms (dense lower in 32/119)
+  fp - dense: median offset 22.2 ms, robust sigma 38.1 ms
+
+[south] medians
+  stations: grid 450, dense kept 382, find_peaks 362, common 349
+  per-channel find_peaks coverage 0.73
+  annotation picks on a find_peaks peak: 0.08 (mean 0.11)
+  neighbour noise (51 m; correlated by the ~46 m SNR blur), common stations: dense 15.8 ms, find_peaks 15.7 ms (dense lower in 28/119)
+  fp - dense: median offset 9.3 ms, robust sigma 31.0 ms
+solve dense        : n=117  sigma 113.5 ms, smooth 85.1 ms, rough 28.3 ms, N-S offset median +22.8 ms (|.| 57.6)
+solve fp           : n=118  sigma 137.6 ms, smooth 108.8 ms, rough 23.4 ms, N-S offset median +41.2 ms (|.| 80.6)
+solve dense_common : n=118  sigma 106.6 ms, smooth 78.9 ms, rough 26.4 ms, N-S offset median +22.2 ms (|.| 53.9)
+solve fp_common    : n=118  sigma 130.2 ms, smooth 101.1 ms, rough 22.6 ms, N-S offset median +37.7 ms (|.| 80.9)
+common stations: dense rough lower in 15/118, dense total sigma lower in 106/118
+pos_diff_m: median 118 m, 90th pct 511 m (n=117)
+common_pos_diff_m: median 78 m, 90th pct 486 m (n=118)
